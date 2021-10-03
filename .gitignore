@@ -1,0 +1,6 @@
+*/
+!alacritty/
+!nvim/
+nvim/plugged
+!sway/
+!wofi/

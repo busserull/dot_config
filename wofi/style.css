@@ -1,0 +1,9 @@
+window {
+    margin: 5px;
+    border: 2px solid green;
+    background-color: black;
+}
+
+#outer-box {
+    margin: 10px;
+}
