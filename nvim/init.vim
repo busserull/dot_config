@@ -8,11 +8,6 @@
 " For example
 " mkdir -p ~/.local/share/nvim/site/pack/gruvbox/start/gruvbox
 " git clone https://github.com/morhetz/gruvbox .../gruvbox
-"
-" Plugins
-" morhetz/gruvbox                           " Colorscheme
-" vim-airline/vim-airline                   " Statusline
-" vim-airline/vim-airline-themes            " angr theme
 
 """""""""""""""""""""
 "" Plug
@@ -28,14 +23,10 @@ Plug 'vim-airline/vim-airline'              " Pretty statusline
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'               " Git lines added/removed
-" Plug 'Raimondi/delimitMate'                 " Match ([{ etc
 Plug 'Yggdroot/indentLine'                  " Mark indent levels
 Plug 'vim-scripts/DoxygenToolkit.vim'       " Add :Dox command
 Plug 'w0rp/ale'                             " Asynchronous Lint Engine
 Plug 'sheerun/vim-polyglot'                 " Language support
-
-
-" Plug 'vim-scripts/c.vim', {'for': ['c', 'cpp', 'h', 'hpp']}
 
 call plug#end()
 
@@ -44,9 +35,6 @@ call plug#end()
 """"""""""""""""""""
 
 let g:ale_lint_on_text_changed = 'never'    " Lint on save and open only
-" let g:elm_setup_keybindings = 0
-" let g:elm_format_autosave = 1
-" let g:polyglot_disabled = ['elm']
 let g:airline#extension#ale#enabled = 1
 let g:rustfmt_autosave = 1
 
@@ -125,25 +113,25 @@ let mapleader = ";"
 " Hide search highlights
 nnoremap <leader>/ :nohl<cr>
 
+" Use jk to exit insert mode
+inoremap jk <esc>
+
 " Ergonomic navigation
 nnoremap s <right>
 vnoremap s <right>
 nnoremap l <nop>
 vnoremap l <nop>
 
-" Autocomplete braces
+" Match brackets
 inoremap {<cr> {<cr>}<esc>O
-inoremap [<cr> [<cr>]<esc>O
 inoremap (<cr> (<cr>)<esc>O
-
-" Use jk to exit insert mode
-inoremap jk <esc>
+inoremap [<cr> [<cr>]<esc>O
 
 " Swap between two last buffers
 nnoremap <c-b> <c-^>
 " Scroll through buffers
-nnoremap <c-j> :bnext<cr>
-nnoremap <c-k> :bprev<cr>
+nnoremap <c-s> :bnext<cr>
+nnoremap <c-h> :bprev<cr>
 
 " Scroll up and down faster
 nnoremap <c-u> 4<c-y>
@@ -169,9 +157,6 @@ vnoremap K :m '<-2<cr>gv=gv
 
 " Unbind join lines
 nnoremap J <nop>
-
-" From custom plugins
-nmap <leader><space> <plug>AustrengClearTrailing<cr>
 
 " Spell checking
 " set spell
