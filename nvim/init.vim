@@ -127,6 +127,18 @@ inoremap {<cr> {<cr>}<esc>O
 inoremap (<cr> (<cr>)<esc>O
 inoremap [<cr> [<cr>]<esc>O
 
+" Indent and unindent insert mode
+inoremap <c-s> <c-t>
+inoremap <c-h> <c-d>
+inoremap <c-t> <nop>
+inoremap <c-d> <nop>
+
+" Window creation and navigation
+nnoremap <c-w><c-l> <c-w>s
+nnoremap <c-w>l <c-w>s
+nnoremap <c-w><c-s> <c-w>l
+nnoremap <c-w>s <c-w>l
+
 " Swap between two last buffers
 nnoremap <c-b> <c-^>
 " Scroll through buffers
@@ -135,7 +147,9 @@ nnoremap <c-h> :bprev<cr>
 
 " Scroll up and down faster
 nnoremap <c-u> 4<c-y>
+vnoremap <c-u> 4<c-y>
 nnoremap <c-e> 4<c-e>
+vnoremap <c-e> 4<c-e>
 
 " Unbind keys for closing window
 nnoremap ZZ <nop>
