@@ -22,7 +22,7 @@ set $menu /usr/bin/wofi --show run | xargs swaymsg exec --
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg /home/austreng/Pictures/good_vibes_only.jpg fill
+output * bg /home/austreng/Pictures/forest.jpg fill
 #
 # Example configuration:
 #
@@ -186,7 +186,7 @@ bar {
     colors {
         statusline #ebdbb2
         background #32302f
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #32323200 #32323200 #ff000c
     }
 }
 

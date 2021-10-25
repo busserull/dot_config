@@ -6,3 +6,4 @@
 nvim/plugged
 !sway/
 !wofi/
+QtProject.conf
