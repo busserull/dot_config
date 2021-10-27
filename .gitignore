@@ -4,6 +4,7 @@
 !alacritty/
 !nvim/
 nvim/plugged
+nvim/.netrwhist
 !sway/
 !wofi/
 !zsh/

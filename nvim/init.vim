@@ -134,10 +134,12 @@ inoremap <c-t> <nop>
 inoremap <c-d> <nop>
 
 " Window creation and navigation
-nnoremap <c-w><c-l> <c-w>s
-nnoremap <c-w>l <c-w>s
+nnoremap <c-w><c-l> <nop>
+nnoremap <c-w>l <nop>
 nnoremap <c-w><c-s> <c-w>l
 nnoremap <c-w>s <c-w>l
+nnoremap <c-w><c-d> <c-w>s
+nnoremap <c-w>d <c-w>s
 
 " Swap between two last buffers
 nnoremap <c-b> <c-^>
