@@ -183,10 +183,22 @@ bar {
     # The default just shows the current date and time.
     status_command while date +'%a %Y-%m-%d %H:%M:%S  '; do sleep 1; done
 
+    font pango:SourceCodePro Medium 11
+    # tray_output none
+
     colors {
+        # Text on statusline, and statusline background
         statusline #ebdbb2
         background #32302f
-        inactive_workspace #32323200 #32323200 #ff000c
+
+        # Format: Border, Background, Text
+        # Focused: Current workspace
+        # Active: Visible on some monitor, but not focused
+        # Inactive: All hidden workspaces
+        focused_workspace   #458588ff #00000000 #ebdbb2ff
+        active_workspace    #00000000 #00000000 #776d66ff
+        inactive_workspace  #00000000 #00000000 #776d66ff
+        urgent_workspace    #00000000 #00000000 #e6894fff
     }
 }
 
@@ -194,6 +206,13 @@ bar {
 ### Swagger
 # for_window [class="^.*"] border pixel 0
 default_border pixel 2
+
+# Format: Border, Background, Text, Indicator, Child-Border
+# The three first apply to the title bar and may be ignored if it is hidden
+client.focused           #00000000 #00000000 #ebdbb2ff #b16286ff #458588ff
+client.focused_inactive  #00000000 #00000000 #ebdbb2ff #32302fff #32302fff
+client.unfocused         #00000000 #00000000 #ebdbb2ff #32302fff #32302fff
+client.urgent            #00000000 #00000000 #ebdbb2ff #e6894f00 #e6894fff
 
 # default_orientation horizontal
 
