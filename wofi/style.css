@@ -1,7 +1,29 @@
 window {
+    font-size: 200%;
     margin: 5px;
-    border: 2px solid green;
-    background-color: black;
+    border: 2px solid #458588;
+    border-radius: 5px;
+    background-color: #32302f;
+    color: #ebdbb2;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    background-color: #32302f;
+    color: #ebdbb2;
+}
+
+#entry {
+    color: #458588;
+}
+
+#entry:selected {
+    background-color: #b16286;
+}
+
+#text:selected {
+    color: #ebdbb2;
 }
 
 #outer-box {
