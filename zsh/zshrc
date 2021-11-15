@@ -1,2 +1,13 @@
+stty -ixon
+
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
+
+bindkey "^k" up-line-or-history
+bindkey "^j" down-line-or-history
+bindkey "^h" backward-char
+bindkey "^s" forward-char
+
+alias man="PAGER=most man"
+
+export PATH=$PATH:/home/austreng/.local/bin
