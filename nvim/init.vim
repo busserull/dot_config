@@ -143,9 +143,12 @@ nnoremap <c-w>d <c-w>s
 
 " Swap between two last buffers
 nnoremap <c-b> <c-^>
+" Unbind <c-s> and <c-h>
+nnoremap <c-s> <nop>
+nnoremap <c-h> <nop>
 " Scroll through buffers
-nnoremap <c-s> :bnext<cr>
-nnoremap <c-h> :bprev<cr>
+" nnoremap <c-s> :bnext<cr>
+" nnoremap <c-h> :bprev<cr>
 
 " Scroll up and down faster
 nnoremap <c-u> 4<c-y>
