@@ -68,6 +68,16 @@ bindsym Alt+Delete kill
 bindsym $mod+w exec $browser
 bindsym $mod+d exec $menu
 
+# Use Scroll Lock as compose key
+input * xkb_options compose:sclk
+
+# Enable media keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2.5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2.5%
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # Reload config file
 bindsym $mod+z reload
 
