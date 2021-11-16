@@ -42,18 +42,23 @@ output * bg /home/austreng/Pictures/eog-wallpaper.jpg fill
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+set $locker 'swaylock -f -e -L -K -i ~/Pictures/eog-wallpaper-blur.jpg\
+  --font "BebasNeue" --font-size 40 --ring-color ffffff00 --bs-hl-color e6894f\
+  --indicator-radius 80 --indicator-thickness 20 --inside-color ffffff00\
+  --inside-clear-color ffffff00 --inside-ver-color ffffff00\
+  --inside-wrong-color ffffff00 --key-hl-color 7cada2 --layout-bg-color ffffff00\
+  --layout-border-color ffffff00 --layout-text-color ffffff00 --line-color ffffff00\
+  --line-clear-color ffffff00 --line-ver-color ffffff00 --line-wrong-color ffffff00\
+  --ring-color ffffff00 --ring-clear-color e6894f --ring-ver-color 7cada2\
+  --ring-wrong-color e96962 --separator-color ffffff00 --text-color ffffff00\
+  --text-clear-color e6894f --text-ver-color 7cada2 --text-wrong-color e96962'
+
+
 exec swayidle -w \
-         timeout 480 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         timeout 500 'swaylock -f -e -L -K -i ~/Pictures/eog-wallpaper-blur.jpg\
-          --font "BebasNeue" --font-size 40 --ring-color ffffff00 --bs-hl-color e6894f\
-          --indicator-radius 80 --indicator-thickness 20 --inside-color ffffff00\
-          --inside-clear-color ffffff00 --inside-ver-color ffffff00\
-          --inside-wrong-color ffffff00 --key-hl-color 7cada2 --layout-bg-color ffffff00\
-          --layout-border-color ffffff00 --layout-text-color ffffff00 --line-color ffffff00\
-          --line-clear-color ffffff00 --line-ver-color ffffff00 --line-wrong-color ffffff00\
-          --ring-color ffffff00 --ring-clear-color e6894f --ring-ver-color 7cada2\
-          --ring-wrong-color e96962 --separator-color ffffff00 --text-color ffffff00\
-          --text-clear-color e6894f --text-ver-color 7cada2 --text-wrong-color e96962'
+         timeout 480 'swaymsg "output * dpms off"' \
+         timeout 500 $locker \
+         timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+         resume 'swaymsg "output * dpms on"'
 
 
 mouse_warping none
@@ -78,16 +83,7 @@ bindsym Alt+Return exec $term
 bindsym Alt+Delete kill
 bindsym $mod+w exec $browser
 bindsym $mod+d exec $menu
-bindsym $mod+l exec swaylock -f -e -L -K -i ~/Pictures/eog-wallpaper-blur.jpg\
-  --font "BebasNeue" --font-size 40 --ring-color ffffff00 --bs-hl-color e6894f\
-  --indicator-radius 80 --indicator-thickness 20 --inside-color ffffff00\
-  --inside-clear-color ffffff00 --inside-ver-color ffffff00\
-  --inside-wrong-color ffffff00 --key-hl-color 7cada2 --layout-bg-color ffffff00\
-  --layout-border-color ffffff00 --layout-text-color ffffff00 --line-color ffffff00\
-  --line-clear-color ffffff00 --line-ver-color ffffff00 --line-wrong-color ffffff00\
-  --ring-color ffffff00 --ring-clear-color e6894f --ring-ver-color 7cada2\
-  --ring-wrong-color e96962 --separator-color ffffff00 --text-color ffffff00\
-  --text-clear-color e6894f --text-ver-color 7cada2 --text-wrong-color e96962
+bindsym $mod+l exec $locker
 
 # Use Scroll Lock as compose key
 input * xkb_options compose:sclk
