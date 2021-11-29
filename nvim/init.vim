@@ -127,9 +127,15 @@ inoremap {<cr> {<cr>}<esc>O
 inoremap (<cr> (<cr>)<esc>O
 inoremap [<cr> [<cr>]<esc>O
 
+" Ctrl to temporarily move in insert mode
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-h> <left>
+inoremap <c-s> <right>
+
 " Indent and unindent insert mode
-inoremap <c-s> <c-t>
-inoremap <c-h> <c-d>
+inoremap <c-l> <c-t>
+inoremap <c-g> <c-d>
 inoremap <c-t> <nop>
 inoremap <c-d> <nop>
 
