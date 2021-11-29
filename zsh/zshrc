@@ -11,3 +11,6 @@ bindkey "^s" forward-char
 alias man="PAGER=most man"
 
 export PATH=$PATH:/home/austreng/.local/bin
+
+export PS1="%B%F{blue}%m%f%b "
+export RPS1="%(? %F{cyan} %F{yellow})%~%f"
