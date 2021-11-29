@@ -230,6 +230,14 @@ set filetype=unix
 
 
 """"""""""""""""""""
+"" Autoformat py
+""""""""""""""""""""
+autocmd BufWritePost *.py silent! !black <afile>
+autocmd BufWritePost *.py edit
+autocmd BufWritePost *.py redraw!
+
+
+""""""""""""""""""""
 "" Visual setup
 """"""""""""""""""""
 
