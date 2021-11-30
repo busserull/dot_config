@@ -1,5 +1,4 @@
-# Main modifier: Alt
-# set $mod Mod1
+# Main modifier: Meta
 set $mod Mod4
 
 # Navigation
@@ -79,11 +78,12 @@ mouse_warping none
 
 ### Basic keybindings
 
-bindsym Alt+Return exec $term
-bindsym Alt+Delete kill
+bindsym $mod+Return exec $term
+bindsym $mod+Delete kill
 bindsym $mod+w exec $browser
 bindsym $mod+d exec $menu
 bindsym $mod+l exec $locker
+bindsym $mod+p exec 'slurp | grim -g - /home/austreng/Screenshots/$(date +"%Y-%m-%d-%H%M%S.png")'
 
 # Use Scroll Lock as compose key
 input * xkb_options compose:sclk
