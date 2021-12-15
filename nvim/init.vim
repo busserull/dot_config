@@ -110,6 +110,9 @@ set nrformats=bin,hex                       " Ctrl-A Ctrl-X only on bin and hex
 
 let mapleader = ";"
 
+" Leave terminal mode
+tnoremap jk <c-\><c-n>
+
 " Hide search highlights
 nnoremap <leader>/ :nohl<cr>
 
@@ -161,6 +164,15 @@ nnoremap <c-u> 4<c-y>
 vnoremap <c-u> 4<c-y>
 nnoremap <c-e> 4<c-e>
 vnoremap <c-e> 4<c-e>
+
+" Position current location to screen middle
+inoremap <c-z> <c-o>zz
+
+" Yank full line
+nnoremap Y yy
+
+" Change whole line with <c-C>
+nnoremap <c-C> cc
 
 " Unbind keys for closing window
 nnoremap ZZ <nop>
