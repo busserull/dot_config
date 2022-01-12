@@ -111,7 +111,13 @@ set nrformats=bin,hex                       " Ctrl-A Ctrl-X only on bin and hex
 let mapleader = ";"
 
 " Leave terminal mode
-tnoremap jk <c-\><c-n>
+" tnoremap jk <c-\><c-n>
+tnoremap <esc> <c-\><c-n>
+tnoremap <c-w><c-h> <c-\><c-n><c-w><c-h>
+tnoremap <c-w><c-s> <c-\><c-n><c-w><c-l>
+tnoremap <c-w><c-j> <c-\><c-n><c-w><c-j>
+tnoremap <c-w><c-k> <c-\><c-n><c-w><c-k>
+tnoremap <c-w><c-p> <c-\><c-n><c-w><c-p>
 
 " Hide search highlights
 nnoremap <leader>/ :nohl<cr>
@@ -136,11 +142,13 @@ inoremap <c-k> <up>
 inoremap <c-h> <left>
 inoremap <c-s> <right>
 
-" Indent and unindent insert mode
+" Indent and unindent
 inoremap <c-l> <c-t>
 inoremap <c-g> <c-d>
 inoremap <c-t> <nop>
 inoremap <c-d> <nop>
+nnoremap <c-l> >>
+nnoremap <c-g> <<
 
 " Window creation and navigation
 nnoremap <c-w><c-l> <nop>
@@ -164,6 +172,16 @@ nnoremap <c-u> 4<c-y>
 vnoremap <c-u> 4<c-y>
 nnoremap <c-e> 4<c-e>
 vnoremap <c-e> 4<c-e>
+
+" Navigate jump motion list
+nnoremap <c-h> <c-o>
+vnoremap <c-h> <c-o>
+nnoremap <c-s> <c-i>
+vnoremap <c-s> <c-i>
+nnoremap <c-o> <nop>
+vnoremap <c-o> <nop>
+nnoremap <c-i> <nop>
+vnoremap <c-i> <nop>
 
 " Position current location to screen middle
 inoremap <c-z> <c-o>zz
