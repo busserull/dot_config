@@ -252,10 +252,10 @@ default_border pixel 2
 # Format: Border, Background, Text, Indicator, Child-Border
 # The three first apply to the title bar and may be ignored if it is hidden
 # client.focused           #00000000 #00000000 #ebdbb2ff #b16286ff #458588ff
-client.focused           #00000000 #00000000 #ebdbb2ff #458588ff #458588ff
-client.focused_inactive  #00000000 #00000000 #ebdbb2ff #32302fff #32302fff
-client.unfocused         #00000000 #00000000 #ebdbb2ff #32302fff #32302fff
-client.urgent            #00000000 #00000000 #ebdbb2ff #e6894f00 #e6894fff
+client.focused           #458588ff #ffffffff #32302fff #458588ff #458588ff
+client.focused_inactive  #458588ff #ffffffff #32302fff #32302fff #32302fff
+client.unfocused         #458588ff #ffffffff #32302fff #32302fff #32302fff
+client.urgent            #458588ff #ffffffff #32302fff #e6894f00 #e6894fff
 
 # default_orientation horizontal
 
