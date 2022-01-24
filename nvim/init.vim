@@ -114,10 +114,27 @@ let mapleader = ";"
 " tnoremap jk <c-\><c-n>
 tnoremap <esc> <c-\><c-n>
 tnoremap <c-w><c-h> <c-\><c-n><c-w><c-h>
+tnoremap <c-w>h <c-\><c-n><c-w><c-h>
 tnoremap <c-w><c-s> <c-\><c-n><c-w><c-l>
+tnoremap <c-w>s <c-\><c-n><c-w><c-l>
 tnoremap <c-w><c-j> <c-\><c-n><c-w><c-j>
+tnoremap <c-w>j <c-\><c-n><c-w><c-j>
 tnoremap <c-w><c-k> <c-\><c-n><c-w><c-k>
+tnoremap <c-w>k <c-\><c-n><c-w><c-k>
 tnoremap <c-w><c-p> <c-\><c-n><c-w><c-p>
+tnoremap <c-w>p <c-\><c-n><c-w><c-p>
+
+" Swap window from insert mode
+inoremap <c-w><c-h> <esc><c-w><c-h>
+inoremap <c-w>h <esc><c-w><c-h>
+inoremap <c-w><c-s> <esc><c-w><c-l>
+inoremap <c-w>s <esc><c-w><c-l>
+inoremap <c-w><c-j> <esc><c-w><c-j>
+inoremap <c-w>j <esc><c-w><c-j>
+inoremap <c-w><c-k> <esc><c-w><c-k>
+inoremap <c-w>k <esc><c-w><c-k>
+inoremap <c-w><c-p> <esc><c-w><c-p>
+inoremap <c-w>p <esc><c-w><c-p>
 
 " Hide search highlights
 nnoremap <leader>/ :nohl<cr>
