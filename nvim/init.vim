@@ -27,6 +27,7 @@ Plug 'Yggdroot/indentLine'                  " Mark indent levels
 Plug 'vim-scripts/DoxygenToolkit.vim'       " Add :Dox command
 Plug 'w0rp/ale'                             " Asynchronous Lint Engine
 Plug 'sheerun/vim-polyglot'                 " Language support
+Plug 'psf/black'                            " Python black
 
 call plug#end()
 
@@ -279,9 +280,7 @@ set filetype=unix
 """"""""""""""""""""
 "" Autoformat py
 """"""""""""""""""""
-autocmd BufWritePost *.py silent! !black <afile>
-autocmd BufWritePost *.py edit
-autocmd BufWritePost *.py redraw!
+autocmd BufWritePre *.py execute ':Black'
 
 
 """"""""""""""""""""
