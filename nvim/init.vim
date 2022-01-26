@@ -308,6 +308,7 @@ let g:gruvbox_improved_warnings=0
 
 set background=dark
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 " Statusline
 set statusline=2                            " Always display statusline
