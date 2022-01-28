@@ -72,6 +72,8 @@ set hidden                                  " Hide buffers when abandoned
 set termguicolors                           " Enable 24-bit RGB colors in TUI
 set cursorline                              " Highlight current line
 
+set linebreak                               " Wrap lines at linebreak
+
 set tabstop=4                               " One tab is four spaces
 set shiftwidth=4                            " Default indent level four spaces
 set expandtab                               " Convert inserted tabs to spaces
