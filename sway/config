@@ -21,7 +21,7 @@ set $menu /usr/bin/wofi --show run | xargs swaymsg exec --
 ### Output configuration
 
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg /home/austreng/Pictures/eog-wallpaper.jpg fill
+output * bg /home/austreng/Pictures/dark_ocean.jpg fill
 #
 # Example configuration:
 #
@@ -41,7 +41,8 @@ output * bg /home/austreng/Pictures/eog-wallpaper.jpg fill
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-set $locker 'swaylock -f -e -L -K -i ~/Pictures/eog-wallpaper-blur.jpg\
+set $locker 'swaylock --daemonize --ignore-empty-password --disable-caps-lock-text\
+  --hide-keyboard-layout --color 000000\
   --font "BebasNeue" --font-size 40 --ring-color ffffff00 --bs-hl-color e6894f\
   --indicator-radius 80 --indicator-thickness 20 --inside-color ffffff00\
   --inside-clear-color ffffff00 --inside-ver-color ffffff00\
@@ -54,9 +55,9 @@ set $locker 'swaylock -f -e -L -K -i ~/Pictures/eog-wallpaper-blur.jpg\
 
 
 exec swayidle -w \
-         timeout 480 'swaymsg "output * dpms off"' \
-         timeout 500 $locker \
-         timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+         # timeout 480 'swaymsg "output * dpms off"' \
+         # timeout 500 $locker \
+         timeout 50 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
          resume 'swaymsg "output * dpms on"'
 
 
@@ -162,6 +163,7 @@ workspace 6 output DP-1
 workspace 7 output DP-3
 workspace 8 output DP-2
 workspace 9 output DP-1
+workspace 10 output DP-3
 
 ### Layout
 
