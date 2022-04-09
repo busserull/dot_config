@@ -624,6 +624,12 @@ key_bindings:
   #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
   #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
   #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
+
+  - { key: K,              mods: Control,                         chars: "\x1b[A"          }
+  - { key: J,              mods: Control,                         chars: "\x1b[B"          }
+  - { key: H,              mods: Control,                         chars: "\x1b[D"          }
+  - { key: S,              mods: Control,                         chars: "\x1b[C"          }
+
   - { key: Key0,           mods: Control,                         action: ReceiveChar      }
   - { key: Equals,         mods: Control,                         action: ReceiveChar      }
   - { key: Plus,           mods: Control,                         action: ReceiveChar      }
