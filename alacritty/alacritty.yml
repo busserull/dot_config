@@ -625,10 +625,15 @@ key_bindings:
   #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
   #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
 
+  # Arrow keys: A = Up, B = Down, C = Right, D = Left
   - { key: K,              mods: Control,                         chars: "\x1b[A"          }
   - { key: J,              mods: Control,                         chars: "\x1b[B"          }
   - { key: H,              mods: Control,                         chars: "\x1b[D"          }
   - { key: S,              mods: Control,                         chars: "\x1b[C"          }
+
+  # Navigation keys: H = Home, F = End
+  - { key: G,              mods: Control,                         chars: "\x1b[H"          }
+  - { key: L,              mods: Control,                         chars: "\x1b[F"          }
 
   - { key: Key0,           mods: Control,                         action: ReceiveChar      }
   - { key: Equals,         mods: Control,                         action: ReceiveChar      }
