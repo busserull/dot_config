@@ -631,10 +631,6 @@ key_bindings:
   - { key: H,              mods: Control,                         chars: "\x1b[D"            }
   - { key: S,              mods: Control,                         chars: "\x1b[C"            }
 
-  # Move by whole words
-  - { key: G,              mods: Control,                         chars: "\x1bB"             }
-  - { key: L,              mods: Control,                         chars: "\x1bF"             }
-
   # Unbind "Font Plus" etc
   - { key: Key0,           mods: Control,                         action: ReceiveChar        }
   - { key: Equals,         mods: Control,                         action: ReceiveChar        }
