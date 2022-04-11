@@ -631,13 +631,9 @@ key_bindings:
   - { key: H,              mods: Control,                         chars: "\x1b[D"            }
   - { key: S,              mods: Control,                         chars: "\x1b[C"            }
 
-  # Navigation keys: H = Home, F = End
-  - { key: G,              mods: Control,                         chars: "\x1b[H"            }
-  - { key: L,              mods: Control,                         chars: "\x1b[F"            }
-
-  # Scrolling
-  - { key: E,              mods: Control,                         action: ScrollHalfPageDown }
-  - { key: U,              mods: Control,                         action: ScrollHalfPageUp   }
+  # Move by whole words
+  - { key: G,              mods: Control,                         chars: "\x1bB"             }
+  - { key: L,              mods: Control,                         chars: "\x1bF"             }
 
   # Unbind "Font Plus" etc
   - { key: Key0,           mods: Control,                         action: ReceiveChar        }
