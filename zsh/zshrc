@@ -15,3 +15,8 @@ export PATH=$PATH:/home/austreng/.local/bin
 
 export PS1="%B%F{blue}%m%f%b "
 export RPS1="%(? %F{cyan} %F{yellow})%~%f"
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
