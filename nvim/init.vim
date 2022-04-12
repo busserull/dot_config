@@ -113,16 +113,19 @@ set nrformats=bin,hex                       " Ctrl-A Ctrl-X only on bin and hex
 let mapleader = ";"
 
 " Leave terminal mode
-" tnoremap jk <c-\><c-n>
 tnoremap <esc> <c-\><c-n>
 tnoremap <c-w><c-h> <c-\><c-n><c-w><c-h>
 tnoremap <c-w>h <c-\><c-n><c-w><c-h>
+tnoremap <c-w><left> <c-\><c-n><c-w><c-h>
 tnoremap <c-w><c-s> <c-\><c-n><c-w><c-l>
 tnoremap <c-w>s <c-\><c-n><c-w><c-l>
+tnoremap <c-w><right> <c-\><c-n><c-w><c-l>
 tnoremap <c-w><c-j> <c-\><c-n><c-w><c-j>
 tnoremap <c-w>j <c-\><c-n><c-w><c-j>
+tnoremap <c-w><down> <c-\><c-n><c-w><c-j>
 tnoremap <c-w><c-k> <c-\><c-n><c-w><c-k>
 tnoremap <c-w>k <c-\><c-n><c-w><c-k>
+tnoremap <c-w><up> <c-\><c-n><c-w><c-k>
 tnoremap <c-w><c-p> <c-\><c-n><c-w><c-p>
 tnoremap <c-w>p <c-\><c-n><c-w><c-p>
 
