@@ -1,0 +1,17 @@
+[user]
+	name = Kolbjørn Austreng
+	email = kolbjorn.austreng@hotzen.io
+[alias]
+	st = status
+	lg = log --all --oneline --decorate --graph
+	cm = commit -sm
+	co = checkout
+	ap = add --patch
+	up = merge --ff-only
+	ri = rebase -i
+[core]
+	editor = vim
+[init]
+	defaultBranch = master
+[advice]
+	skippedCherryPicks = false
