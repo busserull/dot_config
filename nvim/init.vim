@@ -38,7 +38,12 @@ let g:ale_lint_on_text_changed = 'never'    " Lint on save and open only
 let g:airline#extension#ale#enabled = 1
 let g:rustfmt_autosave = 1
 
-let g:user_emmet_leader_key = ','
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 
 """"""""""""""""""""
 "" Basic setup
