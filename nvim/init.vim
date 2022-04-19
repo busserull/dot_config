@@ -24,7 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'airblade/vim-gitgutter'               " Git lines added/removed
 Plug 'Yggdroot/indentLine'                  " Mark indent levels
-Plug 'w0rp/ale'                             " Asynchronous Lint Engine
+Plug 'dense-analysis/ale'                   " Asynchronous Lint Engine
 Plug 'sheerun/vim-polyglot'                 " Language support
 Plug 'psf/black'                            " Python black
 
