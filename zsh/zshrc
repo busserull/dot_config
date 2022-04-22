@@ -13,7 +13,7 @@ alias octave="octave --quiet"
 
 export PATH=$PATH:/home/austreng/.local/bin
 
-export PS1="%B%F{blue}%m%f%b "
+export PS1="%B%F{blue}▶%f%b "
 export RPS1="%(? %F{cyan} %F{yellow})%~%f"
 
 HISTFILE=~/.zsh_history
