@@ -85,7 +85,7 @@ font:
 # Colors (Gruvbox)
 colors:
   primary:
-    background: '#32302f'
+    background: '#3e3b3b'
     foreground: '#ebdbb2'
 
     # Bright and dim foreground colors
