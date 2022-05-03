@@ -10,6 +10,8 @@ bindkey "^s" forward-char
 
 alias man="PAGER=most man"
 alias octave="octave --quiet"
+alias cat="bat --number"
+alias gdb="gdb --quiet -tui"
 
 export PATH=$PATH:/home/austreng/.local/bin
 
@@ -20,3 +22,5 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
+plugins=(fzf)
