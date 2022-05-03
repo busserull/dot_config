@@ -40,7 +40,12 @@ let g:rustfmt_autosave = 1
 
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
-\   'css': ['prettier'],
+\   'css': ['prettier']
+\}
+let g:ale_linters = {
+\   'rust': ['cargo', 'rls'],
+\   'elixir': ['credo', 'dialyxir', 'dogma'],
+\   'python': ['flake8', 'mypy', 'pylint', 'pyright']
 \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
@@ -289,7 +294,9 @@ set filetype=unix
 """"""""""""""""""""
 "" Filetype specific
 """"""""""""""""""""
+autocmd BufRead,BufNewFile *.glsl,*.frag,*.vert,*.fs,*.vs set filetype=glsl
 autocmd BufWritePre *.py execute ':Black'
+
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
 
