@@ -10,7 +10,7 @@ bindkey "^s" forward-char
 
 alias man="PAGER=most man"
 alias octave="octave --quiet"
-alias cat="bat --number"
+alias cat="bat --number --pager 'less -RFX'"
 alias gdb="gdb --quiet -tui"
 
 export PATH=$PATH:/home/austreng/.local/bin
