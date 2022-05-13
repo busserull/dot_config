@@ -3,12 +3,13 @@
 	email = kolbjorn.austreng@hotzen.io
 [alias]
 	st = status
-	lg = log --all --oneline --decorate --graph
+	lg = log --all --oneline --decorate --graph -n 20
 	cm = commit -sm
 	co = checkout
 	ap = add --patch
-	up = merge --ff-only
-	ri = rebase -i
+	cp = cherry-pick --no-commit
+	ff = merge --ff-only
+	ca = commit --amend
 [core]
 	editor = vim
 [init]
