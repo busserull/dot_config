@@ -7,9 +7,10 @@
 	cm = commit -sm
 	co = checkout
 	ap = add --patch
+    ri = rebase --interactive
 	cp = cherry-pick --no-commit
 	ff = merge --ff-only
-	ca = commit --amend
+    cane = commit --amend --no-edit
 [core]
 	editor = vim
 [init]
