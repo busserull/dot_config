@@ -11,7 +11,7 @@ set $up k
 set $term alacritty
 
 # Browser
-set $browser firefox-developer-edition
+set $browser firefox
 
 # Application launcher
 set $menu /usr/bin/wofi --show run | xargs swaymsg exec --
