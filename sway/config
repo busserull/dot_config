@@ -97,6 +97,7 @@ bindsym $mod+p exec 'slurp | grim -g - /home/austreng/Screenshots/$(date +"%Y-%m
 input * xkb_options compose:sclk
 
 # Enable media keys
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2.5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2.5%
 bindsym XF86AudioPlay exec playerctl play-pause
