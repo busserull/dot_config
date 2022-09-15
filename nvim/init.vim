@@ -27,6 +27,7 @@ Plug 'Yggdroot/indentLine'                  " Mark indent levels
 Plug 'dense-analysis/ale'                   " Asynchronous Lint Engine
 Plug 'sheerun/vim-polyglot'                 " Language support
 Plug 'psf/black'                            " Python black
+Plug 'rhysd/vim-clang-format'               " C and C++ auto-format
 
 call plug#end()
 
@@ -49,6 +50,12 @@ let g:ale_linters = {
 \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
+
+let g:clang_format#auto_format = 1
+let g:clang_format#auto_filetypes = ['c', 'cpp']
+let g:clang_format#style_options = {
+\   'ColumnLimit': 99
+\}
 
 """"""""""""""""""""
 "" Basic setup
