@@ -25,9 +25,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'               " Git lines added/removed
 Plug 'Yggdroot/indentLine'                  " Mark indent levels
 Plug 'dense-analysis/ale'                   " Asynchronous Lint Engine
-Plug 'sheerun/vim-polyglot'                 " Language support
 Plug 'psf/black'                            " Python black
 Plug 'rhysd/vim-clang-format'               " C and C++ auto-format
+
+Plug 'elixir-editors/vim-elixir'
 
 call plug#end()
 
@@ -40,6 +41,7 @@ let g:airline#extension#ale#enabled = 1
 let g:rustfmt_autosave = 1
 
 let g:ale_fixers = {
+\   'rust': ['rustfmt'],
 \   'javascript': ['prettier'],
 \   'css': ['prettier']
 \}
@@ -50,11 +52,23 @@ let g:ale_linters = {
 \}
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
+let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+let g:ale_set_loclist = 0
 
 let g:clang_format#auto_format = 1
 let g:clang_format#auto_filetypes = ['c', 'cpp']
 let g:clang_format#style_options = {
-\   'ColumnLimit': 99
+\   'ColumnLimit': 99,
+\   'AlignOperands': 'false',
+\   'AccessModifierOffset': 0,
+\   'AllowShortFunctionsOnASingleLine': 'Empty',
+\   'DerivePointerAlignment': 'false',
+\   'PointerAlignment': 'Middle',
+\   'ReferenceAlignment': 'Right',
+\   'DeriveLineEnding': 'false',
+\   'UseCRLF': 'false',
+\   'BreakConstructorInitializersStyle': 'BeforeComma',
+\   'AlignAfterOpenBracket': 'BlockIndent'
 \}
 
 """"""""""""""""""""
@@ -256,6 +270,8 @@ nnoremap J <nop>
 " set spell
 " set spelllang=en,no
 
+" Search for visually selected text
+vnoremap // y/\V<c-R>=escape(@",'/\')<cr><cr>
 
 """"""""""""""""""""
 "" File explorer
