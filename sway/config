@@ -247,10 +247,10 @@ bar {
         # Focused: Current workspace
         # Active: Visible on some monitor, but not focused
         # Inactive: All hidden workspaces
-        focused_workspace   #458588ff #00000000 #ebdbb2ff
-        active_workspace    #00000000 #00000000 #776d66ff
-        inactive_workspace  #00000000 #00000000 #776d66ff
-        urgent_workspace    #00000000 #00000000 #e6894fff
+        focused_workspace   #458588ff #32302fff #ebdbb2ff
+        active_workspace    #32302fff #32302fff #ebdbb2ff
+        inactive_workspace  #32302fff #32302fff #ebdbb2ff
+        urgent_workspace    #e6894fff #32302fff #e6894fff
     }
 }
 
