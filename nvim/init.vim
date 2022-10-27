@@ -67,7 +67,7 @@ let g:clang_format#style_options = {
 \   'ReferenceAlignment': 'Right',
 \   'DeriveLineEnding': 'false',
 \   'UseCRLF': 'false',
-\   'BreakConstructorInitializersStyle': 'BeforeComma',
+\   'BreakConstructorInitializers': 'BeforeComma',
 \   'AlignAfterOpenBracket': 'BlockIndent'
 \}
 
