@@ -14,7 +14,6 @@
 	cane = commit --amend --no-edit
 	su = status --untracked=no
 	lf = log --follow --
-	am = commit --amend -sm
 [core]
 	editor = vim
 [init]
