@@ -12,7 +12,7 @@
 	cp = cherry-pick --no-commit
 	ff = merge --ff-only
 	cane = commit --amend --no-edit
-	su = status --untracked=no
+	so = status --untracked=no
 	lf = log --follow --
 [core]
 	editor = vim
