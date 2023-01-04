@@ -54,6 +54,7 @@ let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
 let g:ale_set_loclist = 0
+let g:ale_virtualtext_cursor = 0
 
 let g:clang_format#auto_format = 1
 let g:clang_format#auto_filetypes = ['c', 'cpp']
