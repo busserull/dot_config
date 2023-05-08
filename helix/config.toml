@@ -1,0 +1,29 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+scroll-lines = 4
+
+[editor.lsp]
+display-inlay-hints = false
+
+[keys.normal]
+s = "move_char_right"
+l = "select_regex"
+C-e = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
+C-u = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
+C-g = ["select_mode", "goto_line_start", "normal_mode"]
+C-l = ["select_mode", "goto_line_end", "normal_mode"]
+A-e = [":open ."]
+C-s = "no_op"
+C-m = "save_selection"
+C-t = ["move_prev_word_start", "move_next_word_end"]
+
+[keys.normal.g]
+k = "goto_line_end"
+s = "goto_line_end"
+j = "goto_line_start"
+
+[keys.select]
+s = "extend_char_right"
+l = "select_regex"

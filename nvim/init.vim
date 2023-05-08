@@ -41,15 +41,18 @@ let g:airline#extension#ale#enabled = 1
 let g:rustfmt_autosave = 1
 
 let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'rust': ['rustfmt'],
 \   'javascript': ['prettier'],
-\   'css': ['prettier']
+\   'css': ['prettier'],
+\   'python': ['black']
 \}
 let g:ale_linters = {
 \   'rust': ['cargo', 'rls'],
 \   'elixir': ['credo', 'dialyxir', 'dogma'],
-\   'python': ['flake8', 'mypy', 'pylint', 'pyright']
+\   'python': ['flake8', 'pylint', 'pyright']
 \}
+let g:ale_echo_msg_format = '%linter%: %s'
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
@@ -69,6 +72,7 @@ let g:clang_format#style_options = {
 \   'DeriveLineEnding': 'false',
 \   'UseCRLF': 'false',
 \   'BreakConstructorInitializers': 'BeforeComma',
+\   'SeparateDefinitionBlocks': 'Always',
 \   'AlignAfterOpenBracket': 'BlockIndent'
 \}
 
@@ -143,6 +147,9 @@ set nrformats=bin,hex                       " Ctrl-A Ctrl-X only on bin and hex
 """"""""""""""""""""
 
 let mapleader = ";"
+
+" Open ALEDetail
+nnoremap <leader>d :ALEDetail<cr>
 
 " Leave terminal mode
 tnoremap <esc> <c-\><c-n>
@@ -319,11 +326,12 @@ set filetype=unix
 "" Filetype specific
 """"""""""""""""""""
 autocmd BufRead,BufNewFile *.glsl,*.frag,*.vert,*.fs,*.vs set filetype=glsl
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
 
 autocmd FileType js setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType cmake setlocal shiftwidth=2 tabstop=2
 
 """"""""""""""""""""
 "" Visual setup
