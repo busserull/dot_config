@@ -1,4 +1,4 @@
-theme = "gruvbox"
+theme = "luster"
 
 [editor]
 line-number = "relative"
@@ -18,6 +18,8 @@ A-e = [":open ."]
 C-s = "no_op"
 C-m = "save_selection"
 C-t = ["move_prev_word_start", "move_next_word_end"]
+Y = ["save_selection", "extend_to_line_bounds", "yank", "collapse_selection", "jump_backward"]
+D = ["extend_to_line_bounds", "delete_selection"]
 
 [keys.normal.g]
 k = "goto_line_end"
@@ -27,3 +29,9 @@ j = "goto_line_start"
 [keys.select]
 s = "extend_char_right"
 l = "select_regex"
+C-g = "unindent"
+C-l = "indent"
+
+[keys.insert]
+C-g = "unindent"
+C-l = "indent"
