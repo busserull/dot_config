@@ -8,13 +8,32 @@ bindkey "^j" down-line-or-history
 bindkey "^h" backward-char
 bindkey "^s" forward-char
 
+# Would be smoother to have in alacritty config, but I don't think it can be done
+function new_shell() {
+    alacritty msg create-window --working-directory $PWD
+}
+
+zle -N new_shell
+bindkey '^ ' new_shell
+
+function ctrlz() {
+if [[ $#BUFFER == 0 ]]; then
+    fg >/dev/null 2>&1 && zle redisplay
+else
+    zle push-input
+fi
+}
+
+zle -N ctrlz
+bindkey '^Z' ctrlz
+
 alias octave="octave --quiet"
 alias cat="bat --number --pager 'less -RFX'"
 alias gdb="gdb --quiet -tui"
 alias py="python"
 alias sicr="python /home/austreng/SecDom/Remote/sicr_compare.py"
 
-export PATH=$PATH:/home/austreng/.local/bin
+export PATH=$PATH:/home/austreng/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin:/home/austreng/.local/bin
 
 export PS1="%B%F{blue}▶%f%b "
 export RPS1="%(? %F{cyan} %F{yellow})%~%f"
@@ -33,3 +52,24 @@ source $HOME/.config/zsh/completion.zsh
 source $HOME/.config/zsh/key-bindings.zsh
 
 plugins=(fzf)
+
+# dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
+export EDITOR=/usr/bin/helix
+
+# export ZELLIJ_AUTO_ATTACH="true"
+# export ZELLIJ_AUTO_EXIT="true"
+#
+# alias ":q"="zellij action close-pane"
+#
+# if [[ -z "$ZELLIJ" ]]; then
+#     if [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+#         zellij attach -c
+#     else
+#         zellij
+#     fi
+#
+#     if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+#         exit
+#     fi
+# fi
