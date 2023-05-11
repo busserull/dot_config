@@ -271,7 +271,7 @@ client.urgent            #458588ff #ffffffff #32302fff #e6894f00 #e6894fff
 
 font pango:SourceCodePro Medium 11
 
-gaps inner 15
+gaps inner 8
 gaps outer 0
 # gaps horizontal 10
 # gaps vertical 10
@@ -282,3 +282,8 @@ gaps outer 0
 
 smart_gaps on
 smart_borders on
+
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY\
+ SWAYSOCK XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS\
+ DISPLAY XAUTHORITY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
