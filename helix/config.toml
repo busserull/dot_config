@@ -3,6 +3,7 @@ theme = "luster"
 [editor]
 line-number = "relative"
 scroll-lines = 4
+bufferline = "multiple"
 
 [editor.lsp]
 display-inlay-hints = false
@@ -12,14 +13,14 @@ s = "move_char_right"
 l = "select_regex"
 C-e = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
 C-u = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
-C-g = ["select_mode", "goto_line_start", "normal_mode"]
-C-l = ["select_mode", "goto_line_end", "normal_mode"]
-A-e = [":open ."]
+C-g = ["collapse_selection", "select_mode", "goto_line_start", "normal_mode"]
+C-l = ["collapse_selection", "select_mode", "goto_line_end", "normal_mode"]
 C-s = "no_op"
 C-m = "save_selection"
 C-t = ["move_prev_word_start", "move_next_word_end"]
 Y = ["save_selection", "extend_to_line_bounds", "yank", "collapse_selection", "jump_backward"]
 D = ["extend_to_line_bounds", "delete_selection"]
+"%" = ["collapse_selection", "save_selection", "select_all"]
 
 [keys.normal.g]
 k = "goto_line_end"

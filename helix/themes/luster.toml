@@ -66,7 +66,7 @@
 
 "diagnostic.hint" = { underline = { color = "green_kind", style = "curl" } }
 "diagnostic.info" = { underline = { color = "blue_kind", style = "curl" } }
-"diagnostic.warning" = { underline = { color = "red_kind", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow_kind", style = "curl" } }
 "diagnostic.error" = { underline = { color = "red_kind", style = "curl" } }
 
 "hint" = "green_kind"
