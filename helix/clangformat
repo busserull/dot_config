@@ -1,0 +1,13 @@
+IndentWidth: 4
+ColumnLimit: 99
+AlignOperands: false
+AccessModifierOffset: 0
+AllowShortFunctionsOnASingleLine: Empty
+DerivePointerAlignment: false
+PointerAlignment: Middle
+ReferenceAlignment: Right
+DeriveLineEnding: false
+UseCRLF: false
+BreakConstructorInitializers: BeforeComma
+SeparateDefinitionBlocks: Always
+AlignAfterOpenBracket: BlockIndent

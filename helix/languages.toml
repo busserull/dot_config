@@ -2,3 +2,8 @@
 name = "python"
 auto-format = true
 formatter = { command = "black", args = ["-", "-q"] }
+
+[[language]]
+name = "cpp"
+auto-format = true
+formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/helix/clangformat"] }
