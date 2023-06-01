@@ -3,6 +3,7 @@
 */
 !alacritty/
 !nvim/
+!helix/
 nvim/plugged
 nvim/.netrwhist
 !sway/

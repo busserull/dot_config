@@ -3,6 +3,9 @@ name = "python"
 auto-format = true
 formatter = { command = "black", args = ["-", "-q"] }
 
+[language.config.pylsp.plugins.pycodestyle]
+maxLineLength = 88
+
 [[language]]
 name = "cpp"
 auto-format = true
