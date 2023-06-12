@@ -14,7 +14,7 @@ function new_shell() {
 }
 
 zle -N new_shell
-bindkey '^ ' new_shell
+bindkey '^n' new_shell
 
 function ctrlz() {
 if [[ $#BUFFER == 0 ]]; then
@@ -29,6 +29,7 @@ bindkey '^Z' ctrlz
 
 alias octave="octave --quiet"
 alias cat="bat --number --pager 'less -RFX'"
+alias sed="sed --regexp-extended"
 alias gdb="gdb --quiet -tui"
 alias py="python"
 alias sicr="python /home/austreng/SecDom/Remote/sicr_compare.py"
@@ -56,6 +57,8 @@ plugins=(fzf)
 # dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
 export EDITOR=/usr/bin/helix
+
+export SYSTEMC_HOME=/home/austreng/SystemC
 
 # export ZELLIJ_AUTO_ATTACH="true"
 # export ZELLIJ_AUTO_EXIT="true"
