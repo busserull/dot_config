@@ -4,6 +4,7 @@ theme = "luster"
 line-number = "relative"
 scroll-lines = 4
 bufferline = "multiple"
+soft-wrap.enable = true
 
 [editor.lsp]
 display-inlay-hints = false
@@ -19,6 +20,7 @@ C-s = "no_op"
 C-m = "save_selection"
 C-t = "copy_selection_on_next_line"
 C-r = "redo"
+C-d = ["extend_to_line_bounds", "delete_selection", "open_above"]
 Y = ["save_selection", "extend_to_line_bounds", "yank", "collapse_selection", "jump_backward"]
 D = ["extend_to_line_bounds", "delete_selection"]
 "%" = ["collapse_selection", "save_selection", "select_all"]
