@@ -556,7 +556,7 @@ key_bindings:
   #- { key: End,       mods: Shift,   mode: ~Alt,        action: ScrollToBottom }
 
   # Vi Mode
-  #- { key: Space,  mods: Shift|Control, mode: ~Search,    action: ToggleViMode            }
+  - { key: V,  mods: Control, mode: ~Search,    action: ToggleViMode            }
   #- { key: Space,  mods: Shift|Control, mode: Vi|~Search, action: ScrollToBottom          }
   #- { key: Escape,                      mode: Vi|~Search, action: ClearSelection          }
   #- { key: I,                           mode: Vi|~Search, action: ToggleViMode            }
@@ -578,10 +578,10 @@ key_bindings:
   #- { key: V,      mods: Control,       mode: Vi|~Search, action: ToggleBlockSelection    }
   #- { key: V,      mods: Alt,           mode: Vi|~Search, action: ToggleSemanticSelection }
   #- { key: Return,                      mode: Vi|~Search, action: Open                    }
-  #- { key: K,                           mode: Vi|~Search, action: Up                      }
-  #- { key: J,                           mode: Vi|~Search, action: Down                    }
-  #- { key: H,                           mode: Vi|~Search, action: Left                    }
-  #- { key: L,                           mode: Vi|~Search, action: Right                   }
+  - { key: K,                           mode: Vi|~Search, action: Up                      }
+  - { key: J,                           mode: Vi|~Search, action: Down                    }
+  - { key: H,                           mode: Vi|~Search, action: Left                    }
+  - { key: S,                           mode: Vi|~Search, action: Right                   }
   #- { key: Up,                          mode: Vi|~Search, action: Up                      }
   #- { key: Down,                        mode: Vi|~Search, action: Down                    }
   #- { key: Left,                        mode: Vi|~Search, action: Left                    }
