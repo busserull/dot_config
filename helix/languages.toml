@@ -10,3 +10,8 @@ maxLineLength = 88
 name = "cpp"
 auto-format = true
 formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/helix/clangformat"] }
+
+[[language]]
+name = "c"
+auto-format = true
+formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/helix/clangformat"] }

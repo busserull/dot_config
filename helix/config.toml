@@ -1,6 +1,7 @@
 theme = "luster"
 
 [editor]
+auto-format = true
 line-number = "relative"
 scroll-lines = 4
 bufferline = "multiple"
