@@ -9,7 +9,7 @@ bindkey "^h" backward-char
 bindkey "^s" forward-char
 
 # Would be smoother to have in alacritty config, but I don't think it can be done
-function new_shell() {
+function new_shell {
     alacritty msg create-window --working-directory $PWD
 }
 
@@ -26,6 +26,10 @@ fi
 
 zle -N ctrlz
 bindkey '^Z' ctrlz
+
+function cdd {
+    mkdir -p $1 && cd $1
+}
 
 alias octave="octave --quiet"
 alias cat="bat --number --pager 'less -RFX'"
