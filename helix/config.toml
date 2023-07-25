@@ -15,8 +15,10 @@ s = "move_char_right"
 l = "select_regex"
 C-e = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
 C-u = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
-C-g = ["collapse_selection", "select_mode", "goto_line_start", "normal_mode"]
-C-l = ["collapse_selection", "select_mode", "goto_line_end", "normal_mode"]
+C-g = "goto_previous_buffer"
+C-l = "goto_next_buffer"
+H = ["collapse_selection", "select_mode", "goto_line_start", "normal_mode"]
+S = ["collapse_selection", "select_mode", "goto_line_end", "normal_mode"]
 C-s = "no_op"
 C-m = "save_selection"
 C-t = "copy_selection_on_next_line"
@@ -34,6 +36,8 @@ j = "goto_line_start"
 [keys.select]
 s = "extend_char_right"
 l = "select_regex"
+C-e = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
+C-u = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
 C-g = "unindent"
 C-l = "indent"
 
