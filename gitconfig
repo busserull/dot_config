@@ -3,7 +3,7 @@
 	email = kolbjorn.austreng@hotzen.io
 [alias]
 	st = status
-	lg = log --all --oneline --decorate --graph -n 20
+	lg = log --oneline --decorate --graph -n 20
 	lga = log --all --oneline --decorate --graph
 	cm = commit -sm
 	co = checkout
