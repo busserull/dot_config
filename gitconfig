@@ -6,6 +6,7 @@
 	lg = log --oneline --decorate --graph -n 20
 	lga = log --all --oneline --decorate --graph
 	cm = commit -sm
+	cf = commit --fixup
 	co = checkout
 	ap = add --patch
 	ri = rebase --interactive
@@ -14,11 +15,16 @@
 	cane = commit --amend --no-edit
 	so = status --untracked=no
 	lf = log --follow --
+	am = commit --amend -sm
+	bl = blame --color-lines
+	rc = rebase --continue
 [core]
-	editor = vim
+	editor = helix
 [init]
 	defaultBranch = master
 [advice]
 	skippedCherryPicks = false
 	detachedHead = false
 	addIgnoredFile = false
+[rebase]
+	autosquash = true
