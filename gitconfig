@@ -7,15 +7,14 @@
 	lga = log --all --oneline --decorate --graph
 	cm = commit -sm
 	cf = commit --fixup
+	cane = commit --amend --no-edit
 	co = checkout
 	ap = add --patch
 	ri = rebase --interactive
 	cp = cherry-pick --no-commit
 	ff = merge --ff-only
-	cane = commit --amend --no-edit
 	so = status --untracked=no
 	lf = log --follow --
-	am = commit --amend -sm
 	bl = blame --color-lines
 	rc = rebase --continue
 [core]
