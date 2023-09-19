@@ -10,7 +10,7 @@
 	cane = commit --amend --no-edit
 	co = checkout
 	ap = add --patch
-	ri = rebase --interactive
+	ri = rebase --interactive --autosquash
 	cp = cherry-pick --no-commit
 	ff = merge --ff-only
 	so = status --untracked=no
@@ -20,6 +20,7 @@
 	rc = rebase --continue
 	cs = commit --signoff
 	fall = fetch --all
+	fu = commit --fixup
 [core]
 	editor = helix
 [init]
