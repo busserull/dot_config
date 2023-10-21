@@ -21,6 +21,7 @@
 	cs = commit --signoff
 	fall = fetch --all
 	fu = commit --fixup
+	bv = branch -vv
 [core]
 	editor = helix
 [init]
