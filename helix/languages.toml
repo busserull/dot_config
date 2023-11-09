@@ -1,10 +1,12 @@
+[language-server]
+
+elixir-ls = { command = "elixir-ls", config = { elixirLS.autoBuild = true, elixirLS.dialyzerEnabled = true,  elixirLS.dialyzerWarnOpts = [], elixirLS.dialyzerFormat = "dialyxir_long", elixirLS.envVariables = {}, elixirLS.mixEnv = "test", elixirLS.mixTarget = "", elixirLS.projectDir = "", elixirLS.fetchDeps = false, elixirLS.suggestSpecs = true, elixirLS.trace.server = "off", elixirLS.autoInsertRequiredAlias = true, elixirLS.signatureAfterComplete = true, elixirLS.enableTestLenses = false, elixirLS.additionalWatchedExtensions = [], elixirLS.languageServerOverridePath = "" } }
+pylsp = { command = "pylsp", config = { pylsp.plugins.pycodestyle.maxLineLength = 88 } }
+
 [[language]]
 name = "python"
 auto-format = true
 formatter = { command = "black", args = ["-", "-q"] }
-
-[language.config.pylsp.plugins.pycodestyle]
-maxLineLength = 88
 
 [[language]]
 name = "cpp"
@@ -19,11 +21,12 @@ formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.con
 [[language]]
 name = "elixir"
 scope = "source.elixir"
-injection-regex = "elixir"
-file-types = ["ex", "exs"]
-roots = ["mix.exs"]
+injection-regex = "(elixir|ex)"
+file-types = ["ex", "exs", "mix.lock", "html.heex"]
+shebangs = ["elixir"]
+roots = ["mix.exs", "mix.lock"]
+comment-token = "#"
+language-servers = [ "elixir-ls" ]
+indent = { tab-width = 2, unit = " " }
 auto-format = true
 diagnostic-severity = "Hint"
-comment-token = "#"
-indent = { tab-width = 2, unit = " " }
-language-server = { command = "elixir-ls" }
