@@ -13,6 +13,7 @@ display-inlay-hints = false
 [keys.normal]
 s = "move_char_right"
 l = "select_regex"
+L = "split_selection"
 C-e = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
 C-u = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
 C-g = "goto_previous_buffer"
