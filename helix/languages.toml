@@ -18,6 +18,7 @@ formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.con
 [[language]]
 name = "c"
 auto-format = true
+file-types = ["c", "h"]
 formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/helix/clangformat"] }
 
 [[language]]
