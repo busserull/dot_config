@@ -4,9 +4,7 @@
 [alias]
 	st = status
 	lg = log --all --oneline --decorate --graph -n 32
-	la = log --all --oneline --decorate --graph
 	cm = commit -sm
-	cf = commit --fixup
 	cane = commit --amend --no-edit
 	co = checkout
 	ap = add --patch
@@ -20,8 +18,12 @@
 	rc = rebase --continue
 	cs = commit --signoff
 	fa = fetch --all
+	# git fu :/words, not shas
 	fu = commit --fixup
 	bv = branch -vv
+	dd = "! cd -- \"${GIT_PREFIX:-.}\"; f() { if [[ -z $1 ]];\
+	 then git diff HEAD~1 HEAD --stat --stat-width=$(expr $(tput cols) - 5);\
+	 else git diff HEAD~1 HEAD $@; fi; }; f"
 [core]
 	editor = helix
 [init]
@@ -30,5 +32,6 @@
 	skippedCherryPicks = false
 	detachedHead = false
 	addIgnoredFile = false
+	diverging = false
 [rebase]
 	autosquash = true
