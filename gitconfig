@@ -3,7 +3,7 @@
 	email = kolbjorn.austreng@hotzen.io
 [alias]
 	st = status
-	lg = log --oneline --decorate --graph -n 20
+	lg = log --all --oneline --decorate --graph -n 32
 	la = log --all --oneline --decorate --graph
 	cm = commit -sm
 	cf = commit --fixup
@@ -19,7 +19,7 @@
 	re = rebase
 	rc = rebase --continue
 	cs = commit --signoff
-	fall = fetch --all
+	fa = fetch --all
 	fu = commit --fixup
 	bv = branch -vv
 [core]
