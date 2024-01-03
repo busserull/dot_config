@@ -24,6 +24,15 @@
 	dd = "! cd -- \"${GIT_PREFIX:-.}\"; f() { if [[ -z $1 ]];\
 	 then git diff HEAD~1 HEAD --stat --stat-width=$(expr $(tput cols) - 5);\
 	 else git diff HEAD~1 HEAD $@; fi; }; f"
+	bf = "! f() { if [[ -z $1 ]];\
+	  then echo \"Use: git bf <target> | git bf <branch> <target>\"; return 1;\
+	  elif [[ -z $2 ]];\
+	  then branch=$(git status | head -n 1 | sed -nr 's/On branch ([^ ]+)/\\1/p');\
+	  if [[ -z $branch ]];\
+	    then echo \"fatal: no current branch\"; return 1;\
+		else git checkout -q $1; git branch --force $branch $1; git checkout $branch;\
+	  fi;\
+	  else git checkout -q $2; git branch --force $1 $2; git checkout $1; fi; }; f"
 [core]
 	editor = helix
 [init]
