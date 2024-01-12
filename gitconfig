@@ -21,6 +21,7 @@
 	# git fu :/words, not shas
 	fu = commit --fixup
 	bv = branch -vv
+	ds = diff --staged
 	dd = "! cd -- \"${GIT_PREFIX:-.}\"; f() { if [[ -z $1 ]];\
 	 then git diff HEAD~1 HEAD --stat --stat-width=$(expr $(tput cols) - 5);\
 	 else git diff HEAD~1 HEAD $@; fi; }; f"
