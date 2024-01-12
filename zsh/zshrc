@@ -61,6 +61,7 @@ plugins=(fzf)
 # dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
 
 export EDITOR=/usr/bin/helix
+export VISUAL=$EDITOR
 
 export SYSTEMC_HOME=/home/austreng/SystemC
 
