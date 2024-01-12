@@ -29,6 +29,10 @@ Y = ["save_selection", "extend_to_line_bounds", "yank", "collapse_selection", "j
 D = ["extend_to_line_bounds", "delete_selection"]
 "%" = ["collapse_selection", "save_selection", "select_all"]
 
+[keys.normal.space]
+f = "file_picker_in_current_directory"
+F = "file_picker"
+
 [keys.normal.g]
 k = "goto_line_end"
 s = "goto_line_end"
