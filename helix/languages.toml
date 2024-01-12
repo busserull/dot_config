@@ -2,8 +2,13 @@
 
 elixir-ls = { command = "elixir-ls", config = { elixirLS.autoBuild = true, elixirLS.dialyzerEnabled = true,  elixirLS.dialyzerWarnOpts = [], elixirLS.dialyzerFormat = "dialyxir_long", elixirLS.envVariables = {}, elixirLS.mixEnv = "test", elixirLS.mixTarget = "", elixirLS.projectDir = "", elixirLS.fetchDeps = false, elixirLS.suggestSpecs = true, elixirLS.trace.server = "off", elixirLS.autoInsertRequiredAlias = true, elixirLS.signatureAfterComplete = true, elixirLS.enableTestLenses = false, elixirLS.additionalWatchedExtensions = [], elixirLS.languageServerOverridePath = "" } }
 
-# All defaults, plus E731, which is "do not assign a lambda expression, use a def"
-pylsp = { command = "pylsp", config = { pylsp.plugins.pycodestyle.maxLineLength = 88, pylsp.plugins.pycodestyle.ignore = ["E121", "E123", "E126", "E133", "E226", "E241", "E242", "E704", "W503", "W504", "W505", "E731"] } }
+# All defaults, plus:
+# E402: module level import not at top of file
+# E731: do not assign a lambda expression, usa a def
+pylsp = { command = "pylsp", config = { pylsp.plugins.pycodestyle.maxLineLength = 88, pylsp.plugins.pycodestyle.ignore = ["E121", "E123", "E126", "E133", "E226", "E241", "E242", "E402", "E704", "W503", "W504", "W505", "E731"] } }
+
+[language-server.clangd]
+args = ["-header-insertion=never"]
 
 [[language]]
 name = "python"
