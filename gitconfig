@@ -22,6 +22,8 @@
 	fu = commit --fixup
 	bv = branch -vv
 	ds = diff --staged
+	# use in rebases
+	pn = checkout --theirs
 	dd = "! cd -- \"${GIT_PREFIX:-.}\"; f() { if [[ -z $1 ]];\
 	 then git diff HEAD~1 HEAD --stat --stat-width=$(expr $(tput cols) - 5);\
 	 else git diff HEAD~1 HEAD $@; fi; }; f"
@@ -45,3 +47,5 @@
 	diverging = false
 [rebase]
 	autosquash = true
+[push]
+	autoSetupRemote = true
