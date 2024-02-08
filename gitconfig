@@ -36,6 +36,7 @@
 		else git checkout -q $1; git branch --force $branch $1; git checkout $branch;\
 	  fi;\
 	  else git checkout -q $2; git branch --force $1 $2; git checkout $1; fi; }; f"
+	by = "! f() { git diff \"$1\"^!; }; f"
 [core]
 	editor = helix
 [init]
