@@ -1,8 +1,3 @@
-[language-server]
-
-elixir-ls = { command = "elixir-ls", config = { elixirLS.autoBuild = true, elixirLS.dialyzerEnabled = true,  elixirLS.dialyzerWarnOpts = [], elixirLS.dialyzerFormat = "dialyxir_long", elixirLS.envVariables = {}, elixirLS.mixEnv = "test", elixirLS.mixTarget = "", elixirLS.projectDir = "", elixirLS.fetchDeps = false, elixirLS.suggestSpecs = true, elixirLS.trace.server = "off", elixirLS.autoInsertRequiredAlias = true, elixirLS.signatureAfterComplete = true, elixirLS.enableTestLenses = false, elixirLS.additionalWatchedExtensions = [], elixirLS.languageServerOverridePath = "" } }
-
-
 # All defaults, plus:
 # E203: whitespace before ":"
 # E402: module level import not at top of file
@@ -41,7 +36,6 @@ file-types = ["ex", "exs", "mix.lock", "html.heex"]
 shebangs = ["elixir"]
 roots = ["mix.exs", "mix.lock"]
 comment-token = "#"
-language-servers = [ "elixir-ls" ]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 formatter = { command = "mix format", args = ["-"] }
