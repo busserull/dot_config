@@ -40,3 +40,13 @@ auto-format = true
 indent = { tab-width = 2, unit = "  " }
 formatter = { command = "mix format", args = ["-"] }
 diagnostic-severity = "Hint"
+
+[[language]]
+name = "heex"
+scope = "source.heex"
+injection-regex = "heex"
+file-types = ["heex"]
+roots = ["mix.exs", "mix.lock"]
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "elixir-ls" ]
+auto-format = true

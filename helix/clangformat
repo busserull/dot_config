@@ -35,10 +35,10 @@ IndentPPDirectives: AfterHash
 IndentWrappedFunctionNames: false
 InsertNewlineAtEOF: true
 InsertTrailingCommas: Wrapped
-IntegerLiteralSeparator:
-  Binary: 4
-  Decimal: 3
-  Hex: 4
+# IntegerLiteralSeparator:
+#   Binary: 4
+#   Decimal: 3
+#   Hex: 4
 LineEnding: LF
 NamespaceIndentation: Inner
 PackConstructorInitializers: Never
