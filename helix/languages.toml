@@ -1,16 +1,20 @@
-# All defaults, plus:
-# E203: whitespace before ":"
-# E402: module level import not at top of file
-# E731: do not assign a lambda expression, usa a def
 [language-server.pylsp.config.pylsp.plugins]
 pylint.enabled = true
 pyflakes.enabled = true
 pyls_mypy.enabled = true
-pycodestyle.maxLineLength = 88
-pycodestyle.ignore = ["E121", "E123", "E126", "E133", "E203", "E226", "E241", "E242", "E402", "E704", "W503", "W504", "W505", "E731"]
+
+# Defaults, plus:
+# E203: whitespace before ":"
+# E402: module level import not at top of file
+# E731: do not assign a lambda expression, use a def
+[language-server.pylsp.config.pylsp.plugins.pycodestyle]
+ignore = ["E731", "E402", "E203", "E121", "E123", "E126", "E133", "E226", "E241", "E242", "E704", "W503", "W504", "W505"]
+maxLineLength = 88
 
 [language-server.clangd]
 args = ["-header-insertion=never"]
+
+# Language definitions
 
 [[language]]
 name = "python"
@@ -20,33 +24,33 @@ formatter = { command = "black", args = ["-", "--quiet", "--line-length=88"] }
 [[language]]
 name = "cpp"
 auto-format = true
-formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/helix/clangformat"] }
+formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/clangformat/cpp.clangformat"] }
 
 [[language]]
 name = "c"
 auto-format = true
 file-types = ["c", "h"]
-formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/helix/clangformat"] }
+formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/clangformat/c.clangformat"] }
 
 [[language]]
 name = "elixir"
+auto-format = true
 scope = "source.elixir"
 injection-regex = "(elixir|ex)"
 file-types = ["ex", "exs", "mix.lock", "html.heex"]
 shebangs = ["elixir"]
 roots = ["mix.exs", "mix.lock"]
 comment-token = "#"
-auto-format = true
 indent = { tab-width = 2, unit = "  " }
 formatter = { command = "mix format", args = ["-"] }
 diagnostic-severity = "Hint"
 
 [[language]]
 name = "heex"
+auto-format = true
 scope = "source.heex"
 injection-regex = "heex"
 file-types = ["heex"]
 roots = ["mix.exs", "mix.lock"]
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "elixir-ls" ]
-auto-format = true
+language-servers = [ "elixir-ls", "tailwind-language-server", "texlab" ]
