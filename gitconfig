@@ -1,6 +1,6 @@
 [user]
 	name = Kolbjørn Austreng
-	email = kolbjorn.austreng@hotzen.io
+	email = kolbjorn.austreng@example.com
 [alias]
 	st = status
 	lg = log --all --oneline --decorate --graph -n 32
