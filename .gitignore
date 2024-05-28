@@ -11,3 +11,4 @@ nvim/.netrwhist
 !zsh/
 QtProject.conf
 !gitconfig
+!clangformat/
