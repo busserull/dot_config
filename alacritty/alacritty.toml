@@ -1,0 +1,148 @@
+[colors]
+[colors.bright]
+black = "#928374"
+blue = "#83a598"
+cyan = "#8ec07c"
+green = "#b8bb26"
+magenta = "#d3869b"
+red = "#fb4934"
+white = "#ebdbb2"
+yellow = "#fabd2f"
+
+[colors.normal]
+black = "#282828"
+blue = "#458588"
+cyan = "#689d6a"
+green = "#98971a"
+magenta = "#b16286"
+red = "#cc241d"
+white = "#a89984"
+yellow = "#d79921"
+
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 12
+[font.bold]
+family = "Source Code Pro"
+style = "Bold"
+
+[font.bold_italic]
+family = "Source Code Pro"
+style = "Bold Italic"
+
+[font.italic]
+family = "Source Code Pro"
+style = "Italic"
+
+[font.normal]
+family = "Source Code Pro"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "M"
+mode = "~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "U"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "E"
+mode = "Vi|~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Up"
+key = "K"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "Down"
+key = "J"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "Left"
+key = "H"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+action = "Right"
+key = "S"
+mode = "Vi|~Search"
+
+[[keyboard.bindings]]
+chars = "\u001B[A"
+key = "K"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[B"
+key = "J"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[D"
+key = "H"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[C"
+key = "S"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "NumpadAdd"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "NumpadSubtract"
+mods = "Control"
+
+[scrolling]
+history = 1000
+multiplier = 4
+
+[selection]
+save_to_clipboard = false
+
+[window]
+opacity = 0.92
+title = "Alacritty"
+
+[window.padding]
+x = 9
+y = 9
