@@ -1,14 +1,1 @@
-*
-!*.colors
-*/
-!alacritty/
-!nvim/
-!helix/
-nvim/plugged
-nvim/.netrwhist
-!sway/
-!wofi/
-!zsh/
-QtProject.conf
-!gitconfig
-!clangformat/
+
