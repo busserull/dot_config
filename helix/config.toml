@@ -49,3 +49,19 @@ C-l = "indent"
 [keys.insert]
 C-g = "unindent"
 C-l = "indent"
+
+[keys.normal.space.w]
+s = "jump_view_right"
+C-s = "jump_view_right"
+l = "hsplit"
+C-l = "hsplit"
+S = "swap_view_right"
+L = "no_op"
+
+[keys.normal.C-w]
+s = "jump_view_right"
+C-s = "jump_view_right"
+l = "hsplit"
+C-l = "hsplit"
+S = "swap_view_right"
+L = "no_op"
