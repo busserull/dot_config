@@ -1,0 +1,48 @@
+[
+  {
+    "clock": {
+      "actions": {
+        "on-scroll-down": "shift_down",
+        "on-scroll-up": "shift_up"
+      },
+      "calendar": {
+        "format": {
+          "days": "<span color='#ebdbb2'>{}</span>",
+          "months": "<span color='#ebdbb2'>{}</span>",
+          "today": "<span color='#b8bb26'>{}</span>",
+          "weekdays": "<span color='#83a598'>{}</span>",
+          "weeks": "<span color='#83a598'>{}</span>"
+        },
+        "mode": "year",
+        "mode-mon-col": 3,
+        "on-scroll": 1,
+        "weeks-pos": "left"
+      },
+      "format": "{:%a %Y-%m-%d %H:%M:%S}",
+      "interval": 1,
+      "tooltip": true,
+      "tooltip-format": "<small>{calendar}</small>"
+    },
+    "hyprland/workspaces": {
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
+      }
+    },
+    "layer": "top",
+    "modules-center": [],
+    "modules-left": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+      "clock"
+    ]
+  }
+]
