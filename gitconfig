@@ -51,3 +51,5 @@
 	autosquash = true
 [push]
 	autoSetupRemote = true
+[checkout]
+	defaultRemote = br
