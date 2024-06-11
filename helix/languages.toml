@@ -14,6 +14,9 @@ maxLineLength = 88
 [language-server.clangd]
 args = ["-header-insertion=never"]
 
+[language-server.tailwindcss-ls]
+config = { userLanguages = { heex = "html", "*.html.heex" = "html", elixir = "html", "*.ex" = "html" } }
+
 # Language definitions
 
 [[language]]
@@ -42,6 +45,7 @@ shebangs = ["elixir"]
 roots = ["mix.exs", "mix.lock"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
+language-servers = [ "elixir-ls", "tailwindcss-ls" ]
 formatter = { command = "mix format", args = ["-"] }
 diagnostic-severity = "Hint"
 
@@ -53,4 +57,4 @@ injection-regex = "heex"
 file-types = ["heex"]
 roots = ["mix.exs", "mix.lock"]
 indent = { tab-width = 2, unit = "  " }
-language-servers = [ "elixir-ls", "tailwind-language-server", "texlab" ]
+language-servers = [ "elixir-ls", "tailwindcss-ls" ]
