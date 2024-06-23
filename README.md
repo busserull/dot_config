@@ -19,12 +19,14 @@ python rust-analyzer vscode-{css,html,json}-languageserver marksman texlab
 python-lsp-black python-lsp-server tailwindcss-language-server swaybg
 waybar strace neofetch libreoffice-fresh libreoffice-fresh-nb kicad-library
 transmission-gtk nvidia-dkms nvidia-utils lib32-nvidia-utils swaylock
-kicad-library-3d vlc libva-nvidia-driver libva-vdpau-driver
+kicad-library-3d vlc libva-nvidia-driver libva-vdpau-driver gcc-fortran
 ```
 
 ## Notes
 
 For `gnome`, the choice is mostly `xdg-desktop-portal-wlr`.
+The `gcc-fortran` package is needed to compile and install the `control`
+package to `octave`.
 
 ## AUR
 
