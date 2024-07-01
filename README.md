@@ -36,6 +36,16 @@ From the AUR, you want:
 2. elixir-ls
 3. davinci-resolve
 
+# DaVinci Resolve
+
+DaVinci Resolve uses certain older libraries without explicitly linking to them.
+Additionally, its default desktop entry is case sensitive when searching for it.
+
+Change the `/usr/share/applications/DaVinciResolve.desktop` file as such:
+
+- `GenericName=davinci resolve`
+- `Exec=sh -c 'LD_PRELOAD="/usr/lib/libgio-2.0.so /usr/lib/libgmodule-2.0.so /usr/lib/libglib-2.0.so" /opt/resolve/bin/resolve %u'`
+
 # Cursors
 
 - git clone Capitaine Cursors (Gruvbox) into ~/.local/share/icons/capgruv, or check AUR
