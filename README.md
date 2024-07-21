@@ -53,3 +53,14 @@ Change the `/usr/share/applications/DaVinciResolve.desktop` file as such:
 - Symlink from ~/.local/share/icons/capgruv to ~/.local/share/icons/default
 - Use the name "capgruv" in all configs
 - run `gsettings set org.gnome.desktop.interface cursor-theme 'capgruv'`
+
+# Locales
+
+In `/etc/locale.conf`, you want:
+
+```text
+LANG=en_US.UTF-8
+LC_TIME=nb_NO.UTF-8
+LC_PAPER=nb_NO.UTF-8
+LC_MEASUREMENT=nb_NO.UTF-8
+```
