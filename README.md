@@ -64,3 +64,6 @@ LC_TIME=nb_NO.UTF-8
 LC_PAPER=nb_NO.UTF-8
 LC_MEASUREMENT=nb_NO.UTF-8
 ```
+
+Generate locales with `locale-gen`.
+Locales may be inspected with `localectl`.
