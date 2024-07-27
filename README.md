@@ -48,11 +48,11 @@ Change the `/usr/share/applications/DaVinciResolve.desktop` file as such:
 
 # Cursors
 
-- git clone Capitaine Cursors (Gruvbox) into ~/.local/share/icons/capgruv, or check AUR
-- Change the name field in ~/.local/share/icons/capgruv/index.theme to "capgruv"
-- Symlink from ~/.local/share/icons/capgruv to ~/.local/share/icons/default
+- Download a release of [Capitaine Cursors](https://github.com/sainnhe/capitaine-cursors/releases) and extract the Gruvbox version to `.local/share/icons/capgruv`
+- Change the name field in `~/.local/share/icons/capgruv/index.theme` to "capgruv"
+- Symlink from `~/.local/share/icons/capgruv` to `~/.local/share/icons/default`
 - Use the name "capgruv" in all configs
-- run `gsettings set org.gnome.desktop.interface cursor-theme 'capgruv'`
+- Run `gsettings set org.gnome.desktop.interface cursor-theme 'capgruv'`
 
 # Locales
 
