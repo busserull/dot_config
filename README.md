@@ -56,6 +56,10 @@ Change the `/usr/share/applications/DaVinciResolve.desktop` file as such:
 
 # Locales
 
+In `/etc/locale.gen`, uncomment both `en_US.UTF-8` and `nb_NO.UTF-8`.
+
+Generate locales with `locale-gen`.
+
 In `/etc/locale.conf`, you want:
 
 ```text
@@ -65,5 +69,4 @@ LC_PAPER=nb_NO.UTF-8
 LC_MEASUREMENT=nb_NO.UTF-8
 ```
 
-Generate locales with `locale-gen`.
 Locales may be inspected with `localectl`.
