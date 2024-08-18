@@ -25,8 +25,8 @@
 	# use in rebases
 	pn = checkout --theirs
 	dd = "! cd -- \"${GIT_PREFIX:-.}\"; f() { if [[ -z $1 ]];\
-	 then git diff HEAD~1 HEAD --stat --stat-width=$(expr $(tput cols) - 5);\
-	 else git diff HEAD~1 HEAD $@; fi; }; f"
+	 then git diff HEAD^! --stat --stat-width=$(expr $(tput cols) - 5);\
+	 else git diff HEAD^! $@; fi; }; f"
 	bf = "! f() { if [[ -z $1 ]];\
 	  then echo \"Use: git bf <target> | git bf <branch> <target>\"; return 1;\
 	  elif [[ -z $2 ]];\
