@@ -45,6 +45,7 @@ C-e = ["scroll_down", "scroll_down", "scroll_down", "scroll_down"]
 C-u = ["scroll_up", "scroll_up", "scroll_up", "scroll_up"]
 C-g = "unindent"
 C-l = "indent"
+";" = ["collapse_selection", "normal_mode"]
 
 [keys.insert]
 C-g = "unindent"
