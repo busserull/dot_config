@@ -34,9 +34,8 @@ f = "file_picker_in_current_directory"
 F = "file_picker"
 
 [keys.normal.g]
-k = "goto_line_end"
+l = "goto_line_end"
 s = "goto_line_end"
-j = "goto_line_start"
 
 [keys.select]
 s = "extend_char_right"
