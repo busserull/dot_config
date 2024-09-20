@@ -66,11 +66,12 @@ window#waybar {
 }
 
 #clock {
-  margin: 0 12px 0 0;
-  padding: 3px 12px 0 12px;
-  border-radius: 5px;
-  color: #b8b890;
-  background: #1d2021;
+  margin: 4px 0 0 0;
+  padding: 3px 12px 3px 12px;
+  border-radius: 1000px;
+  color: black;
+  background: transparent;
+  opacity: 0.40;
 }
 
 tooltip {

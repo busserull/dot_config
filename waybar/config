@@ -1,6 +1,8 @@
 [
   {
     "clock": {
+      "timezone": "Europe/Oslo",
+      "locale": "nb_NO.UTF-8",
       "actions": {
         "on-scroll-down": "shift_down",
         "on-scroll-up": "shift_up"
@@ -18,7 +20,7 @@
         "on-scroll": 1,
         "weeks-pos": "left"
       },
-      "format": "{:%a %Y-%m-%d %H:%M:%S}",
+      "format": "{:L%a %Y-%m-%d %H:%M:%S}",
       "interval": 1,
       "tooltip": true,
       "tooltip-format": "<small>{calendar}</small>"
@@ -36,13 +38,15 @@
         "9": []
       }
     },
+    "reload_style_on_change": true,
+    "mode": "overlay",
     "layer": "top",
-    "modules-center": [],
+    "modules-center": [
+      "clock",
+    ],
     "modules-left": [
-      "hyprland/workspaces"
     ],
     "modules-right": [
-      "clock"
     ]
   }
 ]
