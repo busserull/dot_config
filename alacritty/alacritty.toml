@@ -27,7 +27,7 @@ foreground = "#ebdbb2"
 TERM = "alacritty"
 
 [font]
-size = 12
+size = 10
 [font.bold]
 family = "Source Code Pro"
 style = "Bold"
