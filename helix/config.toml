@@ -6,9 +6,13 @@ line-number = "relative"
 scroll-lines = 4
 bufferline = "multiple"
 soft-wrap.enable = true
+smart-tab.enable = false
 
 [editor.lsp]
 display-inlay-hints = false
+
+[editor.file-picker]
+hidden = false
 
 [keys.normal]
 s = "move_char_right"
