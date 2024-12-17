@@ -20,7 +20,7 @@
         "on-scroll": 1,
         "weeks-pos": "left"
       },
-      "format": "{:L%a %Y-%m-%d %H:%M:%S}",
+      "format": "{:L%V %a %Y-%m-%d %H:%M:%S}",
       "interval": 1,
       "tooltip": true,
       "tooltip-format": "<small>{calendar}</small>"
