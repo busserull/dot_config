@@ -38,6 +38,7 @@
 	  else git checkout -q $2; git branch --force $1 $2; git checkout $1; fi; }; f"
 	by = "! f() { git diff \"$1\"^!; }; f"
 	pf = push --force-with-lease
+	ns = show --name-status
 [core]
 	editor = helix
 [init]
