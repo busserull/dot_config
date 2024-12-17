@@ -8,6 +8,11 @@ bufferline = "multiple"
 soft-wrap.enable = true
 smart-tab.enable = false
 
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
 [editor.lsp]
 display-inlay-hints = false
 
