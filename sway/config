@@ -21,10 +21,12 @@ set $menu /usr/bin/wofi --show run | xargs swaymsg exec --
 ### Output configuration
 
 output DP-1 resolution 1920x1080 position 0,0
-output HDMI-A-1 resolution 1920x1080 position 1920,0
+output LVDS-1 resolution 1366x768 position 300,1080
+# output DP-1 resolution 1920x1080 position 0,0
+# output HDMI-A-1 resolution 1920x1080 position 1920,0
 
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg /home/austreng/Pictures/forest.jpg fill
+output * bg /home/austreng/Pictures/astronaut.jpg fill
 #
 # Example configuration:
 #
@@ -163,15 +165,15 @@ bindsym $mod+Shift+9 move container to workspace number 10
 
 # Bind workspaces to correct monitors
 workspace 1 output DP-1
-workspace 2 output DP-2
-workspace 3 output DP-3
+workspace 2 output DP-1
+workspace 3 output LVDS-1
 workspace 4 output DP-1
-workspace 5 output DP-2
-workspace 6 output DP-3
-workspace 7 output DP-1
-workspace 8 output DP-2
-workspace 9 output DP-3
-workspace 10 output DP-3
+workspace 5 output DP-1
+workspace 6 output DP-1
+workspace 7 output LVDS-1
+workspace 8 output LVDS-1
+workspace 9 output LVDS-1
+workspace 10 output LVDS-1
 
 ### Layout
 
@@ -271,7 +273,7 @@ client.urgent            #458588ff #ffffffff #32302fff #e6894f00 #e6894fff
 
 font pango:SourceCodePro Medium 11
 
-gaps inner 8
+gaps inner 0
 gaps outer 0
 # gaps horizontal 10
 # gaps vertical 10

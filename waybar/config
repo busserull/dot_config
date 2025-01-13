@@ -42,11 +42,11 @@
     "mode": "overlay",
     "layer": "top",
     "modules-center": [
-      "clock",
     ],
     "modules-left": [
     ],
     "modules-right": [
+      "clock",
     ]
   }
 ]
