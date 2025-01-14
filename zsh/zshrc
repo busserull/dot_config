@@ -32,14 +32,61 @@ function cdd {
     mkdir -p $1 && cd $1
 }
 
+export SNAPGEAR_BASE_DIR=${HOME}/snapgear-2.6-p40-CRE2
+
+function sn {
+    case $PWD/ in
+        ${SNAPGEAR_BASE_DIR}/*) container_dir=$PWD;;
+        *) container_dir=${SNAPGEAR_BASE_DIR};;
+    esac
+
+    docker run -it --rm --mount type=bind,src=${SNAPGEAR_BASE_DIR},dst=${SNAPGEAR_BASE_DIR} \
+    -p 8080:8080 snapgear /bin/bash -c  "cd ${container_dir}; exec /bin/bash"
+}
+
+function venv {
+    if [[ ! -e venv ]]; then
+        python -m venv venv
+    fi
+
+    source venv/bin/activate
+
+    if [[ -e requirements.txt ]]; then
+        pip install -qr requirements.txt
+    fi
+}
+
+function ct {
+    cd $(mktemp -d)
+}
+
+function cr {
+    ct
+    cargo new rust_temp
+    cd rust_temp
+}
+
+function rup {
+    (\
+    cd ${SNAPGEAR_BASE_DIR}/user/cre_controller &&\
+    date '+%H:%M:%S' > timestamp &&\
+    tar cf update_bundle timestamp cre_controller &&\
+    cat update_bundle | ssh root@10.19.35.194 'cat > /root/update_bundle && touch update_flag' &&\
+    rm timestamp update_bundle\
+    )
+}
+
 # Aliases
 alias octave="octave --quiet"
 alias bat="bat --number --pager 'less -RFX'"
 alias sed="sed --regexp-extended"
-alias gdb="gdb --quiet -tui"
+alias gdb="gdb --quiet -tui -ex 'set debuginfod enabled on'"
 alias py="python"
 alias ls="ls --color=auto"
-alias ct="cd $(mktemp -d)"
+alias ht="hx ~/.howto"
+alias rupinit="cat ~/test/cre_update/cre_update | ssh root@10.19.35.194 \"cat > /root/cre_update\""
+alias shr="ssh root@10.19.35.194"
+# alias rup="date '+%H:%M:%S' > ${SNAPGEAR_BASE_DIR}/user/cre_controller/timestamp && tar cf  cat ${SNAPGEAR_BASE_DIR}/user/cre_controller/cre_controller | ssh root@10.19.35.194 \"cat > /root/cre_controller && touch update_flag\""
 
 # Basic setup
 export PS1="%B%F{blue}▶%f%b "
@@ -47,6 +94,7 @@ export RPS1="%(? %F{cyan} %F{yellow})%~%f"
 export MANPAGER="less -R --use-color -Dd+G -Du+b -DS+kY"
 export EDITOR=/usr/bin/helix
 export VISUAL=$EDITOR
+export PATH=$PATH:$HOME/.local/utils
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -57,5 +105,10 @@ setopt interactivecomments
 # Plugins
 source $HOME/.config/zsh/completion.zsh
 source $HOME/.config/zsh/key-bindings.zsh
+
+# Command line editor
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey "^X^E" edit-command-line
 
 plugins=(fzf)

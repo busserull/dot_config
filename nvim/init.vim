@@ -1,83 +1,4 @@
 """"""""""""""""""""
-"" Packages
-""""""""""""""""""""
-"
-" Packages can be handled by vim internally
-" Check :help packages
-"
-" For example
-" mkdir -p ~/.local/share/nvim/site/pack/gruvbox/start/gruvbox
-" git clone https://github.com/morhetz/gruvbox .../gruvbox
-
-"""""""""""""""""""""
-"" Plug
-""""""""""""""""""""
-
-call plug#begin()
-
-Plug 'morhetz/gruvbox'                      " Colorscheme
-Plug 'tpope/vim-commentary'                 " gc(c) to comment out/in
-Plug 'tpope/vim-endwise'                    " Auto-end structures
-
-Plug 'vim-airline/vim-airline'              " Pretty statusline
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'airblade/vim-gitgutter'               " Git lines added/removed
-Plug 'Yggdroot/indentLine'                  " Mark indent levels
-Plug 'dense-analysis/ale'                   " Asynchronous Lint Engine
-Plug 'psf/black'                            " Python black
-Plug 'rhysd/vim-clang-format'               " C and C++ auto-format
-
-Plug 'elixir-editors/vim-elixir'
-
-call plug#end()
-
-""""""""""""""""""""
-"" Plug config
-""""""""""""""""""""
-
-let g:ale_lint_on_text_changed = 'never'    " Lint on save and open only
-let g:airline#extension#ale#enabled = 1
-let g:rustfmt_autosave = 1
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'rust': ['rustfmt'],
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\   'python': ['black']
-\}
-let g:ale_linters = {
-\   'rust': ['cargo', 'rls'],
-\   'elixir': ['credo', 'dialyxir', 'dogma'],
-\   'python': ['flake8', 'pylint', 'pyright']
-\}
-let g:ale_echo_msg_format = '%linter%: %s'
-let g:ale_linters_explicit = 1
-let g:ale_fix_on_save = 1
-let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
-let g:ale_set_loclist = 0
-let g:ale_virtualtext_cursor = 0
-let g:ale_close_preview_on_insert = 1
-
-let g:clang_format#auto_format = 1
-let g:clang_format#auto_filetypes = ['c', 'cpp']
-let g:clang_format#style_options = {
-\   'ColumnLimit': 99,
-\   'AlignOperands': 'false',
-\   'AccessModifierOffset': 0,
-\   'AllowShortFunctionsOnASingleLine': 'Empty',
-\   'DerivePointerAlignment': 'false',
-\   'PointerAlignment': 'Middle',
-\   'ReferenceAlignment': 'Right',
-\   'DeriveLineEnding': 'false',
-\   'UseCRLF': 'false',
-\   'BreakConstructorInitializers': 'BeforeComma',
-\   'SeparateDefinitionBlocks': 'Always',
-\   'AlignAfterOpenBracket': 'BlockIndent'
-\}
-
-""""""""""""""""""""
 "" Basic setup
 """"""""""""""""""""
 
@@ -148,9 +69,6 @@ set nrformats=bin,hex                       " Ctrl-A Ctrl-X only on bin and hex
 """"""""""""""""""""
 
 let mapleader = ";"
-
-" Open ALEDetail
-nnoremap <leader>d :ALEDetail<cr>
 
 " Leave terminal mode
 tnoremap <esc> <c-\><c-n>
@@ -290,9 +208,6 @@ let g:netrw_banner = 0                      " Hide netrw banner
 let g:netrw_liststyle = 0                   " Show only current directory
 let g:netrw_browse_split = 0                " Open files in same window
 
-" Toggle netrw
-" nnoremap <leader>f :40vs +Explore<cr>
-
 
 """"""""""""""""""""
 "" Search behavior
@@ -322,43 +237,11 @@ set nospell                                 " Spelling off by default
 
 set filetype=unix
 
-
-""""""""""""""""""""
-"" Filetype specific
-""""""""""""""""""""
-autocmd BufRead,BufNewFile *.glsl,*.frag,*.vert,*.fs,*.vs set filetype=glsl
-" autocmd BufWritePre *.py execute ':Black'
-
-autocmd FileType js setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
-autocmd FileType cmake setlocal shiftwidth=2 tabstop=2
-
 """"""""""""""""""""
 "" Visual setup
 """"""""""""""""""""
 
-" Colorscheme
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_underline=1
-let g:gruvbox_undercurl=1
-let g:gruvbox_contrast_dark='soft'
-let g:gruvbox_hls_cursor='blue'
-let g:gruvbox_sign_column='bg1'
-let g:gruvbox_color_column='bg1'
-let g:gruvbox_vert_split='bg0'
-let g:gruvbox_italicize_comments=1
-let g:gruvbox_italicize_strings=0
-let g:gruvbox_invert_selection=0
-let g:gruvbox_invert_signs=0
-let g:gruvbox_invert_indent_guides=0
-let g:gruvbox_invert_tabline=0
-let g:gruvbox_improved_strings=0
-let g:gruvbox_improved_warnings=0
-
 set background=dark
-colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
 " Statusline
@@ -373,22 +256,3 @@ set statusline=%m%r%F%=%y\ (Line\ %l\/%L\ col\ %c)
 " %l                                        " Current line in buffer
 " %L                                        " Number of lines in buffer
 " %c                                        " Column number
-
-" Vim-airline
-let g:airline_theme = 'angr'
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = '>'
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = '<'
-let g:airline_symbols.branch = 'B'
-let g:airline_symbols.readonly = 'RO'
-let g:airline_symbols.crypt = 'C'
-let g:airline_symbols.linenr = 'Line '
-let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.paste = 'P'
-let g:airline_symbols.spell = 'S'
-let g:airline_symbols.notexists = 'x'
-let g:airline_symbols.whitespace = ' '
