@@ -46,7 +46,7 @@ roots = ["mix.exs", "mix.lock"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "elixir-ls", "tailwindcss-ls" ]
-formatter = { command = "mix format", args = ["-"] }
+formatter = { command = "mix", args = ["format", "-"] }
 diagnostic-severity = "hint"
 
 [[language]]
