@@ -69,8 +69,8 @@ window#waybar {
   margin: 0 160px 0 0;
   padding: 3px 12px 3px 12px;
   border-radius: 0 0 8px 8px;
-  color: white;
-  background: black;
+  color: #ebdbb2;
+  background: #121212;
   opacity: 1.0;
 }
 
