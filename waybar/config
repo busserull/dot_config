@@ -41,12 +41,13 @@
     "reload_style_on_change": true,
     "mode": "overlay",
     "layer": "top",
+    "position": "bottom",
     "modules-center": [
+      "clock",
     ],
     "modules-left": [
     ],
     "modules-right": [
-      "clock",
     ]
   }
 ]
