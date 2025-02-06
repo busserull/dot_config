@@ -6,7 +6,7 @@
   border-radius: 0;
   font-family: "Source Code Pro";
   font-weight: 500;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 window#waybar {
@@ -67,11 +67,11 @@ window#waybar {
 
 #clock {
   margin: 0;
-  padding: 3px 12px 3px 12px;
+  padding: 2px 8px 2px 8px;
   border-radius: 8px 8px 0 0;
   color: #ebdbb2;
   background: #121212;
-  opacity: 1.0;
+  opacity: 0.5;
 }
 
 tooltip {
