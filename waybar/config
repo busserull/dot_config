@@ -20,7 +20,7 @@
         "on-scroll": 1,
         "weeks-pos": "left"
       },
-      "format": "{:L%V %a %Y-%m-%d %H:%M:%S}",
+      "format": "w{:L%V %a %Y-%m-%d %H:%M:%S}",
       "interval": 1,
       "tooltip": true,
       "tooltip-format": "<small>{calendar}</small>"
@@ -41,13 +41,13 @@
     "reload_style_on_change": true,
     "mode": "overlay",
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "modules-center": [
-      "clock",
     ],
     "modules-left": [
     ],
     "modules-right": [
+      "clock",
     ]
   }
 ]
