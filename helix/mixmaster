@@ -1,0 +1,20 @@
+#!/bin/sh
+
+base="$PWD"
+formatter=""
+
+while [ "$base" != "/" ]; do
+  if [ -e "$base/.formatter.exs" ]; then
+    formatter="$base/.formatter.exs"
+    break
+  fi
+  base=$(dirname "$base")
+done
+
+cd "$base"
+
+if [ "$formatter" == "" ]; then
+  mix format -
+else
+  mix format --dot-formatter "$formatter" -
+fi

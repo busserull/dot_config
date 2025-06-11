@@ -37,6 +37,12 @@ From the AUR, you want:
 2. elixir-ls
 3. davinci-resolve
 
+## mix format
+
+To have `helix` correctly run `mix format`, it needs to be wrapped in a
+`mixmaster` script. This is located under `helix/mixmaster`.
+Copy it into `PATH`, for example under `/usr/bin/mixmaster`.
+
 # DaVinci Resolve
 
 DaVinci Resolve uses certain older libraries without explicitly linking to them.
