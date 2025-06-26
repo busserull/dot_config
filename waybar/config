@@ -41,7 +41,7 @@
     "reload_style_on_change": true,
     "mode": "overlay",
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "modules-center": [
     ],
     "modules-left": [
