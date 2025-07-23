@@ -27,21 +27,21 @@ foreground = "#ebdbb2"
 TERM = "alacritty"
 
 [font]
-size = 10
+size = 12
 [font.bold]
-family = "Source Code Pro"
+family = "SauceCodeProNerdFontMono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Source Code Pro"
+family = "SauceCodeProNerdFontMono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Source Code Pro"
+family = "SauceCodeProNerdFontMono"
 style = "Italic"
 
 [font.normal]
-family = "Source Code Pro"
+family = "SauceCodeProNerdFontMono"
 style = "Regular"
 
 [[keyboard.bindings]]
