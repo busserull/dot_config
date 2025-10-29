@@ -7,6 +7,7 @@ scroll-lines = 4
 bufferline = "multiple"
 soft-wrap.enable = true
 smart-tab.enable = false
+auto-completion = false
 
 [editor.indent-guides]
 render = true
@@ -14,6 +15,7 @@ character = "╎"
 skip-levels = 1
 
 [editor.lsp]
+auto-signature-help = false
 display-inlay-hints = false
 
 [editor.file-picker]
