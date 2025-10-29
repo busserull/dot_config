@@ -28,7 +28,6 @@
 "label" = "aqua1"
 "module" = "aqua1"
 
-"ui.background" = { bg = "none" }
 "ui.linenr" = { fg = "bg4" }
 "ui.linenr.selected" = { fg = "yellow1" }
 "ui.cursorline" = { bg = "bg1" }
