@@ -58,3 +58,8 @@ file-types = ["heex"]
 roots = ["mix.exs", "mix.lock"]
 indent = { tab-width = 2, unit = "  " }
 language-servers = [ "elixir-ls", "tailwindcss-ls" ]
+
+[[language]]
+name = "slint"
+auto-format = true
+scope = "source.slint"
