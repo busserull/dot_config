@@ -27,7 +27,8 @@ foreground = "#ebdbb2"
 TERM = "alacritty"
 
 [font]
-size = 12
+size = 11
+
 [font.bold]
 family = "SauceCodeProNerdFontMono"
 style = "Bold"
