@@ -29,6 +29,15 @@ For `gnome`, the choice is mostly `xdg-desktop-portal-wlr`.
 The `gcc-fortran` package is needed to compile and install the `control`
 package to `octave`.
 
+## Environmental variables
+
+For FreeCAD to work nicely under Hyprland and Wayland, add the following to
+`/etc/environment`:
+
+```text
+QT_QPA_PLATFORM=xcb
+```
+
 ## AUR
 
 From the AUR, you want:
