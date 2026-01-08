@@ -3,7 +3,10 @@
 	email = kolbjorn.austreng@example.com
 [alias]
 	st = status
+	sh = status .
+	la = "! GIT_PAGER=\"less -p 'HEAD( ->|,)'\" git log --all --oneline --decorate --graph"
 	lg = log --all --oneline --decorate --graph -n 32
+	ca = commit --amend
 	cm = commit -sm
 	cane = commit --amend --no-edit
 	co = checkout
@@ -14,7 +17,6 @@
 	so = status --untracked=no
 	lf = log --follow --
 	bl = blame --color-lines
-	re = rebase
 	rc = rebase --continue
 	cs = commit --signoff
 	fa = fetch --all
@@ -39,6 +41,7 @@
 	by = "! f() { git diff \"$1\"^!; }; f"
 	pf = push --force-with-lease
 	ns = show --name-status
+	suri = submodule update --recursive --init
 [core]
 	editor = helix
 [init]
@@ -54,3 +57,5 @@
 	autoSetupRemote = true
 [checkout]
 	defaultRemote = br
+[blame]
+	date = format:%F %a
