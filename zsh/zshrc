@@ -58,12 +58,27 @@ function venv {
 
 function ct {
     cd $(mktemp -d)
+
+    if [[ "$#" -eq 1 ]]; then
+        hx $1
+    fi
 }
 
 function cr {
     ct
     cargo new rust_temp
     cd rust_temp
+    hx src/main.rs
+}
+
+function cb {
+    base=/home/austreng/leon/buildroot;
+
+    if [[ $(pwd) == $base ]]; then
+        cd $OLDPWD;
+    else
+        cd $base;
+    fi
 }
 
 function rup {
@@ -78,7 +93,7 @@ function rup {
 
 # Aliases
 alias octave="octave --quiet"
-alias bat="bat --number --pager 'less -RFX'"
+alias bat="bat --theme gruvbox-dark --number --pager 'less -RFX'"
 alias sed="sed --regexp-extended"
 alias gdb="gdb --quiet -tui -ex 'set debuginfod enabled on'"
 alias py="python"
@@ -95,6 +110,7 @@ export MANPAGER="less -R --use-color -Dd+G -Du+b -DS+kY"
 export EDITOR=/usr/bin/helix
 export VISUAL=$EDITOR
 export PATH=$PATH:$HOME/.local/utils
+export PYTHON_BASIC_REPL=1
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -111,7 +127,10 @@ autoload -z edit-command-line
 zle -N edit-command-line
 bindkey "^X^E" edit-command-line
 
+# Other files
+export PYTHONSTARTUP=$HOME/.config/python_repl_config.py
+
 plugins=(fzf)
 
 # This is to remove the unsightly "%" that otherwise pops up when opening a new shell
-sleep 0.02
+sleep 0.05
