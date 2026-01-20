@@ -1,4 +1,4 @@
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 	export QT_QPA_PLATFORM=xcb
-	exec Hyprland
+	exec start-hyprland
 fi
