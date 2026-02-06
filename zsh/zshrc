@@ -7,6 +7,9 @@ bindkey "^j" down-line-or-history
 bindkey "^h" backward-char
 bindkey "^s" forward-char
 
+# Delete
+bindkey "^[[3~" delete-char
+
 # Spawn new shell
 function new_shell {
     alacritty msg create-window --working-directory $PWD
@@ -41,8 +44,49 @@ function sn {
     esac
 
     docker run -it --rm --mount type=bind,src=${SNAPGEAR_BASE_DIR},dst=${SNAPGEAR_BASE_DIR} \
-    -p 8080:8080 snapgear /bin/bash -c  "cd ${container_dir}; exec /bin/bash"
+    snapgear /bin/bash -c  "cd ${container_dir}; exec /bin/bash"
+    # -p 8080:8080 snapgear /bin/bash -c  "cd ${container_dir}; exec /bin/bash"
 }
+
+export BLACKBEAM_BASE_DIR=${HOME}/blackbeam
+
+function bb {
+    cp /home/austreng/.gitconfig ${BLACKBEAM_BASE_DIR}/.git/config
+
+    case $PWD/ in
+        ${BLACKBEAM_BASE_DIR}/*) container_dir=$PWD;;
+        *) container_dir=${BLACKBEAM_BASE_DIR};;
+    esac
+
+    docker run -it --rm \
+    --mount type=bind,src=${BLACKBEAM_BASE_DIR},dst=${BLACKBEAM_BASE_DIR} \
+    --mount type=bind,src=${HOME}/.ssh,dst=/home/radionor/.ssh \
+    --env SSH_AUTH_SOCK="/ssh_auth_sock" --env DISPLAY=${DISPLAY} \
+    --workdir ${container_dir} blackbeam /bin/bash \
+    -c "source ${BLACKBEAM_BASE_DIR}/setupsdk 1>/dev/null; exec /bin/bash"
+}
+
+export TI_SOM_BASE=${HOME}/SOM
+export TI_SDK=${TI_SOM_BASE}/sdk_am62
+
+function ti {
+    case $PWD/ in
+        ${TI_SDK}/*) container_dir=$PWD;;
+        *) container_dir=${TI_SDK};;
+    esac
+
+    docker run -it --rm \
+    --mount type=bind,src=${TI_SOM_BASE},dst=${TI_SOM_BASE} --workdir ${container_dir} ti
+}
+
+function yo {
+    docker run --rm -it \
+    --mount type=bind,src=${TI_SOM_BASE},dst=${TI_SOM_BASE} \
+    --workdir ${TI_SOM_BASE}/poky yo /bin/bash \
+    -c "sudo chown austreng:austreng -R build && source oe-init-build-env; exec /bin/bash"
+}
+
+alias redbox='docker run -it --rm --mount type=bind,src=/home/austreng/SOM/redbox,dst=/home/austreng/SOM/redbox --workdir /home/austreng/SOM/redbox redbox'
 
 function venv {
     if [[ ! -e venv ]]; then
@@ -101,6 +145,13 @@ alias ls="ls --color=auto"
 alias ht="hx ~/.howto"
 alias rupinit="cat ~/test/cre_update/cre_update | ssh root@10.19.35.194 \"cat > /root/cre_update\""
 alias shr="ssh root@10.19.35.194"
+alias a="./a.out"
+
+CRE_BASE=/home/austreng/snapgear-2.6-p40-CRE2
+alias cre="cd $CRE_BASE"
+alias crec="cd $CRE_BASE/user/cre_controller"
+alias crel="cd $CRE_BASE/lib"
+alias creg="cd $CRE_BASE/linux-2.6.21.1/drivers/ambapp/gaisler/hr_greth"
 # alias rup="date '+%H:%M:%S' > ${SNAPGEAR_BASE_DIR}/user/cre_controller/timestamp && tar cf  cat ${SNAPGEAR_BASE_DIR}/user/cre_controller/cre_controller | ssh root@10.19.35.194 \"cat > /root/cre_controller && touch update_flag\""
 
 # Basic setup
@@ -109,7 +160,7 @@ export RPS1="%(? %F{cyan} %F{yellow})%~%f"
 export MANPAGER="less -R --use-color -Dd+G -Du+b -DS+kY"
 export EDITOR=/usr/bin/helix
 export VISUAL=$EDITOR
-export PATH=$PATH:$HOME/.local/utils
+export PATH=$PATH:/opt/riscv/bin:$HOME/.local/utils:$HOME/.cargo/bin
 export PYTHON_BASIC_REPL=1
 
 HISTFILE=~/.zsh_history
@@ -129,6 +180,8 @@ bindkey "^X^E" edit-command-line
 
 # Other files
 export PYTHONSTARTUP=$HOME/.config/python_repl_config.py
+
+export QT_QPA_PLATFORM=xcb
 
 plugins=(fzf)
 
