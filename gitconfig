@@ -54,7 +54,7 @@
 [rebase]
 	autosquash = true
 [push]
-	autoSetupRemote = true
+	autoSetupRemote = false
 [checkout]
 	defaultRemote = br
 [blame]
