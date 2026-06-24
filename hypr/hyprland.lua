@@ -77,7 +77,7 @@ hl.config({
   },
 
   decoration = {
-    rounding = 5,
+    rounding = 2,
     active_opacity = 1.0,
     inactive_opacity = 1.0,
     shadow = {
@@ -164,7 +164,7 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 
 for i = 1, 9 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
-  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false}))
 end
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
