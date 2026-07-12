@@ -3,17 +3,16 @@
 ----------------
 
 hl.monitor({
-  output = "DP-2",
-  mode = "1920x1080@60",
-  position = "2560x0",
+  output = "HDMI-A-1",
+  mode = "2560x1440@120",
+  position = "0x0",
   scale = 1,
-  transform = 3,
 })
 
 hl.monitor({
-  output = "HDMI-A-1",
-  mode = "2560x1440@120",
-  position = "0x300",
+  output = "DP-2",
+  mode = "1920x1080@60",
+  position = "2560x210",
   scale = 1,
 })
 
@@ -35,7 +34,7 @@ local web = "firefox"
 
 hl.on("hyprland.start", function()
   hl.exec_cmd(
-    "waybar & swaybg -o HDMI-A-1 -i /home/austreng/.config/astronaut.png -o DP-2 -i /home/austreng/.config/space_tall.png &")
+    "waybar & swaybg -o HDMI-A-1 -i /home/austreng/.config/astronaut.png -o DP-2 -i /home/austreng/.config/astronaut.png &")
   hl.exec_cmd("hyprctl setcursor capgruv 24")
 end)
 
@@ -164,7 +163,7 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 
 for i = 1, 9 do
   hl.bind(mainMod .. " + " .. i, hl.dsp.focus({ workspace = i }))
-  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false}))
+  hl.bind(mainMod .. " + SHIFT + " .. i, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -182,6 +181,12 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ to
 ------------------------------
 --- WINDOWS AND WORKSPACES ---
 ------------------------------
+
+for i = 1, 10 do
+  local default = (i == 2 or i == 3)
+  local monitor = (i % 3 == 0 and "DP-2" or "HDMI-A-1")
+  hl.workspace_rule({ workspace = i, monitor = monitor, default = default })
+end
 
 hl.window_rule({
   name = "suppress-maximize-events",
