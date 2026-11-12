@@ -20,7 +20,7 @@ python-lsp-black python-lsp-server tailwindcss-language-server swaybg
 waybar strace neofetch libreoffice-fresh libreoffice-fresh-nb kicad-library
 transmission-gtk nvidia-dkms nvidia-utils lib32-nvidia-utils swaylock
 kicad-library-3d vlc libva-nvidia-driver libva-vdpau-driver gcc-fortran
-qt6-wayland make cmake ninja
+qt6-wayland make cmake ninja moreutils
 ```
 
 ## Notes
