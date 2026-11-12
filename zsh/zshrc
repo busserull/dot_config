@@ -115,6 +115,13 @@ function cr {
     hx src/main.rs
 }
 
+function da {
+    last=$(fc -ln -1);
+    case $last in
+        "git diff "*) rest=${last#git diff }; echo "git add $rest"; git add $rest;;
+    esac
+}
+
 function cb {
     base=/home/austreng/leon/buildroot;
 
@@ -137,6 +144,7 @@ function rup {
 
 # Aliases
 alias octave="octave --quiet"
+alias tree="tree -C"
 alias bat="bat --theme gruvbox-dark --number --pager 'less -RFX'"
 alias sed="sed --regexp-extended"
 alias gdb="gdb --quiet -tui -ex 'set debuginfod enabled on'"
