@@ -36,6 +36,12 @@ file-types = ["c", "h"]
 formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/clangformat/c.clangformat"] }
 
 [[language]]
+name = "rust"
+
+[language-server.rust-analyzer]
+config = { procMacro.ignored.leptos_macro = [ "server" ] , cargo.allFeatures = true }
+
+[[language]]
 name = "elixir"
 auto-format = true
 scope = "source.elixir"
