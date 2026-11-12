@@ -25,6 +25,10 @@ auto-format = true
 formatter = { command = "black", args = ["-", "--quiet", "--line-length=88"] }
 
 [[language]]
+name = "lua"
+auto-format = true
+
+[[language]]
 name = "cpp"
 auto-format = true
 formatter = { command = "clang-format", args = ["-style=file:/home/austreng/.config/clangformat/cpp.clangformat"] }

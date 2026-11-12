@@ -57,8 +57,8 @@ hl.config({
   ecosystem = { no_update_news = true },
 
   general = {
-    gaps_in = 2,
-    gaps_out = 2,
+    gaps_in = 1,
+    gaps_out = 1,
     border_size = 2,
     col = {
       active_border = { colors = { "rgba(458588ff)", "rgba(689d6aff)" }, angle = 45 },
@@ -80,7 +80,7 @@ hl.config({
     active_opacity = 1.0,
     inactive_opacity = 1.0,
     shadow = {
-      enabled = true,
+      enabled = false,
       range = 12,
       render_power = 4,
       color = "rgba(45858899)",

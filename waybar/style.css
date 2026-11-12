@@ -70,8 +70,8 @@ window#waybar {
   padding: 2px 8px 2px 8px;
   border-radius: 4px;
   color: #ebdbb2;
-  background: #121212;
-  opacity: 1.0;
+  background: #000000;
+  opacity: 0.2;
 }
 
 tooltip {

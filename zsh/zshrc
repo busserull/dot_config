@@ -168,8 +168,12 @@ export RPS1="%(? %F{cyan} %F{yellow})%~%f"
 export MANPAGER="less -R --use-color -Dd+G -Du+b -DS+kY"
 export EDITOR=/usr/bin/helix
 export VISUAL=$EDITOR
-export PATH=$PATH:/opt/riscv/bin:$HOME/.local/utils:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.cargo/bin:$HOME/.config/helix
 export PYTHON_BASIC_REPL=1
+
+alias suspend="swaylock; sleep 1; systemctl suspend"
+alias hlexit="hyprctl dispatch 'hl.dsp.exit()'"
+alias efinity="source /home/austreng/efinity/2025.2/bin/setup.sh; /home/austreng/efinity/2025.2/bin/efinity &!; exit"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000

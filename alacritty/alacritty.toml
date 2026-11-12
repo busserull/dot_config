@@ -27,7 +27,7 @@ foreground = "#ebdbb2"
 TERM = "alacritty"
 
 [font]
-size = 12
+size = 11
 
 [font.bold]
 family = "SauceCodeProNerdFontMono"
@@ -141,7 +141,7 @@ multiplier = 4
 save_to_clipboard = false
 
 [window]
-opacity = 1.00
+opacity = 1.0
 title = "Alacritty"
 
 [window.padding]

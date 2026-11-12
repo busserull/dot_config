@@ -38,6 +38,14 @@ For FreeCAD to work nicely under Hyprland and Wayland, add the following to
 QT_QPA_PLATFORM=xcb
 ```
 
+## GNOME
+
+To disable hot corners on GNOME, run:
+
+```text
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+```
+
 ## AUR
 
 From the AUR, you want:
